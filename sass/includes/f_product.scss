@@ -1,0 +1,216 @@
+
+
+#product{
+
+  margin-left: 15px;
+  .procard:hover{
+    // border: $color-orange solid 2px;
+      box-shadow: 0 0 5px rgba(255, 136, 0, 0.945);
+  }
+  
+  
+    .procard{
+      // border: #AEAFB3 solid 0.1px;
+      background: white;
+      width:  162px;
+      // height: 350px;
+      border-radius: 10px;
+      box-shadow: rgba(22, 26, 31, 0.2) 1px 2px 3px;
+      margin-top: 6px;
+      margin-left: -8px;
+    }
+  
+  .protopcard{
+    // border: royalblue solid 0.1px;
+    height: 40px;
+  }
+
+
+  .protopcard .img-new , .img-favorite{
+    position: absolute;
+  }
+  .proimgnew img{
+   margin-left: 35px;
+   width: 40px;
+   
+  
+  }
+
+
+  .icon_favorite{
+    border: none;
+    border-radius: 20px;
+    position: absolute;
+    background: transparent;
+    margin-left: -165px;
+    margin-top: 15px;
+  }
+
+
+  .protopcard span{
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    // background: red;
+    justify-content: center;
+    align-items: center;
+    margin-left: -19px;
+    overflow: hidden;
+  }
+
+  .protopcard span::before{
+    font-family: $font-siemreap;
+    font-size: 14px;
+    content: 'New';
+    color: white;
+    position: absolute;
+    width: 120%;
+    height: 23px;
+    background: #62baea;
+    margin-left: -40px;
+    margin-top: 15px;
+    transform: rotate(45deg) translateY(-1px);
+  }
+  
+
+
+
+
+   .img-favorite{
+    position: absolute;
+  }
+
+
+  .icon_favorite{
+    border: none;
+    border-radius: 20px;
+    position: absolute;
+    background: transparent;
+    margin-left: -165px;
+    margin-top: 15px;
+  }
+
+
+
+
+  .img-favorite{
+    margin-left: -75px;
+    margin-top: 7px;
+  }
+  
+  .proimg{
+    // border: royalblue solid 0.1px;
+    width: 100%;
+    height:130px;
+  }
+  
+   .proimg .img-grid{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+  
+  .prodescription{
+    // border: royalblue solid 0.1px;
+    width: 100%;
+  }
+  .proname{
+    margin: 8px;
+    font-size: 12px;
+    text-align: left;
+    color: black;
+  }
+  
+  .proprice{
+    margin-left: 8px;
+    font-size: 14px;
+    color: black;
+  }
+
+  .po_price_dis, .po_price_dis h6{
+    font-size: 12px;
+  }
+  
+  .prodetail{
+    // border: royalblue solid 0.1px;
+    width: 100%;
+    padding-right: 5px;
+    padding-left: 5px;
+    color: black;
+  }
+  
+  .protextdetail{
+    font-size: 8px;
+    text-align: left;
+  }
+  
+  .prostock {
+    text-align: left;
+    margin-left: 8px;
+  }
+
+  .btnadd{
+    width: 38px;
+    height: 38px;
+  
+    border: none;
+    border-radius: 20px;
+    box-shadow: rgba(22, 26, 31, 0.3)  2px 2px 3px;
+    background: white;
+    position: absolute;
+    margin-left: -70px;
+    margin-top: 310px;
+  }
+
+  .btnadd i{
+    color: $color-orange;
+    font-size:30px;
+    margin-top: 3px;
+    margin-left: 4px;
+  }
+
+  .btnadd i:hover{
+    color: white;
+  }
+
+  .btnadd:hover{
+    background-color: $color-orange;
+
+    .btnadd{
+      color: white;
+    }
+  }
+  
+
+  .prorate{
+    margin-left: -50px;
+    margin-top: 30px;
+    font-size: 12px;
+   
+  }
+
+
+  
+
+
+  
+
+
+ 
+
+  
+
+
+}
+  
+.multi-line {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+ 
+
+}
+
+  
+  

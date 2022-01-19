@@ -1,0 +1,36 @@
+$color-primary: #003859;
+$color-second: #00A5C4;
+$color-yellow: #FFD289;
+$color-red:red;
+$color-space-gray:#4B4B4C;
+$color-second1:#17A2B8;
+$color-black: black;
+$color-orange:#FF9933;
+$color-btn:#009578;
+
+  /* Color Class */
+.color-item{
+    color:$color-orange;
+  }
+
+  .bg-color-item{
+    background:$color-orange;
+    color: white;
+  }
+  
+.color-primary{
+  color: $color-primary;
+  background: white;
+}
+
+.color-primary-bg{
+  background:$color-primary;
+}
+
+.color-second{
+  color: $color-second;
+}
+
+.color-second-bg{
+  background: $color-second;
+}
