@@ -32,9 +32,28 @@ foreach ($result1 as $row){
                                 <input type="text"  name="txtname" value="<?= $row['pro_name']; ?>" hidden>              
                                 <input type="text"  name="txtphone" value="<?php echo $fetch_info['phone_number'] ?>" hidden>
 
-                          <button type="submit" class="btn btn-danger form-control">
-                            Buy 
-                          </button>
+                                
+                                <?php 
+                                                
+
+                                                if ( $row['stock'] == "IN STOCK") {
+                                                    echo '
+                                                    <button type="submit" class="btn btn-danger form-control">
+                                                      Buy 
+                                                    </button>
+                                                  ';
+                                                } else {
+                                                    
+                                                    echo '
+                                                    <button type="submit" class="btn btn-danger form-control" disabled>
+                                                      OUT STOCK
+                                                    </button>
+                                                    ';
+                                                };
+
+                                    ?>
+                          
+                          
 
                           </form>
                         
@@ -49,8 +68,24 @@ foreach ($result1 as $row){
                                 <input type="text"  name="txtproid" value="<?= $row['pro_id']; ?>" hidden>
                                 <input type="text"  name="txtqty" value="1" hidden data-id="<?= $row['pro_id']?? "N/A" ; ?>" class="qty_input border px-1 bg-light text-center">
                                 <input type="text"  name="txtname" value="<?= $row['pro_name']; ?>" hidden>
+                              
+                                <?php 
+                                                
 
-                                <button type="submit" class="btn btn-warning form-control">Add to Cart</button>
+                                                if ( $row['stock'] == "IN STOCK") {
+                                                    echo '
+                                                    <button type="submit" class="btn btn-warning form-control">Add to Cart</button>
+                                                  ';
+                                                } else {
+                                                    
+                                                    echo '
+                                                    <button type="submit" class="btn btn-warning form-control" disabled>Add to Cart</button>
+                                                    ';
+                                                };
+
+                                    ?>                    
+
+                                
  
                             </form>
 
