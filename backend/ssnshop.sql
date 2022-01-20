@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 19, 2022 at 05:19 PM
+-- Generation Time: Jan 20, 2022 at 02:18 PM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.1.1
 
@@ -84,8 +84,17 @@ CREATE TABLE `cart` (
   `order_id` varchar(255) NOT NULL,
   `date_order` datetime DEFAULT NULL,
   `date_completed` datetime DEFAULT NULL,
-  `phone_number` varchar(200) NOT NULL
+  `phone` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `cart`
+--
+
+INSERT INTO `cart` (`cart_id`, `user_id`, `pro_id`, `qty`, `cart_status`, `order_id`, `date_order`, `date_completed`, `phone`) VALUES
+(2, 6, 3, 1, 'Order', '2201200351', '2022-01-20 18:54:07', NULL, '+85510401191'),
+(3, 1, 1, 1, 'Completed', '2201203753', '2022-01-20 20:12:57', NULL, '010401191'),
+(4, 6, 4, 1, 'Completed', '2201200351', '2022-01-20 18:54:07', NULL, '+85510401191');
 
 -- --------------------------------------------------------
 
@@ -106,12 +115,14 @@ CREATE TABLE `favorite` (
 
 INSERT INTO `favorite` (`favorite_id`, `user_id`, `pro_id`, `favorite_status`) VALUES
 (1, 0, 0, 1),
-(11, 1, 3, 1),
 (15, 1, 1, 1),
-(18, 1, 4, 1),
 (19, 1, 1, 1),
 (20, 1, 2, 1),
-(21, 1, 1, 1);
+(21, 1, 1, 1),
+(25, 1, 3, 1),
+(26, 1, 1, 1),
+(27, 1, 4, 1),
+(31, 6, 1, 1);
 
 -- --------------------------------------------------------
 
@@ -223,16 +234,19 @@ CREATE TABLE `usertable` (
   `code` mediumint(50) NOT NULL,
   `status` text NOT NULL,
   `address` varchar(255) NOT NULL,
-  `phone_number` varchar(200) NOT NULL
+  `phone_number` varchar(200) NOT NULL,
+  `gender` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `usertable`
 --
 
-INSERT INTO `usertable` (`user_id`, `name`, `email`, `password`, `code`, `status`, `address`, `phone_number`) VALUES
-(1, 'SSN SHOPPING', 'sophannichnhoel1@gmail.com', '$2y$10$u8atrGTQvgmMSOB7iqtzbuki8zKKHmEMge62H0c7/D5Hi21DezrH.', 0, 'verified', 'Phnom Penh', '010401191'),
-(6, 'Sophannich', 'sophannichnhoel@gmail.com', '$2y$10$9k2J7KT70LI6ggtfS/eE/e4kQAaEF.RWHn2vsVpZWfW.IsqtI/u8G', 0, 'verified', 'PP', '+85510401191');
+INSERT INTO `usertable` (`user_id`, `name`, `email`, `password`, `code`, `status`, `address`, `phone_number`, `gender`) VALUES
+(1, 'SSN SHOPPING', 'sophannichnhoel1@gmail.com', '$2y$10$u8atrGTQvgmMSOB7iqtzbuki8zKKHmEMge62H0c7/D5Hi21DezrH.', 0, 'verified', 'Phnom Penh', '010401191', 'Female'),
+(6, 'Sophannich', 'sophannichnhoel@gmail.com', '$2y$10$9k2J7KT70LI6ggtfS/eE/e4kQAaEF.RWHn2vsVpZWfW.IsqtI/u8G', 0, 'verified', 'Phnom Penh', '+85510401191', 'Male'),
+(7, 'Test', 'sophannichnhoel2@gmail.com', '$2y$10$cw0Cqfn1ZO3AHOLi0ZVs4ee1ie/4wTaIETFJz9dIWG00aswqttOFi', 0, 'verified', 'Phnom Penh', '0108182762', ''),
+(8, 'User Test 1', 'test@gmail.com', '$2y$10$KArZkyKJ1maetRU3MBoED.op/Dxc49A31pz6NS0xD.OGcbbI66BVC', 0, 'verified', 'Phnom Penh', '0108182762', '');
 
 --
 -- Indexes for dumped tables
@@ -300,13 +314,13 @@ ALTER TABLE `brand`
 -- AUTO_INCREMENT for table `cart`
 --
 ALTER TABLE `cart`
-  MODIFY `cart_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `cart_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `favorite`
 --
 ALTER TABLE `favorite`
-  MODIFY `favorite_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `favorite_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 
 --
 -- AUTO_INCREMENT for table `product`
@@ -324,7 +338,7 @@ ALTER TABLE `product_detail`
 -- AUTO_INCREMENT for table `usertable`
 --
 ALTER TABLE `usertable`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

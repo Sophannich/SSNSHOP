@@ -18,6 +18,13 @@
               <label for="validationCustom01">Username</label>
               <input name="txtusername" type="text" class="form-control"  placeholder="Username" id="validationCustom01" value="<?php echo $fetch_info['name'] ?>">
               <br>
+              <label>Gender</label>
+              <select class="form-control" name="txtgender">
+                <option ><?php echo $fetch_info['gender'] ?></option>
+                <option>Male</option>
+                <option>Female</option>
+              </select>
+              <br>
               <label for="validationCustom02">Address</label>
               <input name="txtaddress" type="text" class="form-control"  placeholder="Your Address" id="validationCustom02" value="<?php echo $fetch_info['address'] ?>">
               <br>

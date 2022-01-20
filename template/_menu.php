@@ -18,11 +18,29 @@
 
                 <div class="menu-profile">
                   <div class="menu-box-pf">
-                    <img src="./assets/profile/pf.jpg" alt="">
+
+                    <?php
+                        if($fetch_info['gender'] =="Male"){
+                          echo '
+                          <img src="./assets/profile/p-male.jpg" alt="">
+                          ';
+                        }elseif($fetch_info['gender'] =="Female"){
+                          echo '
+                          <img src="./assets/profile/p-female.jpg" alt="">
+                          ';
+                        }else{
+                          echo '
+                          <img src="./assets/profile/p-no.png" alt="">
+                        
+                          ';
+                        }
+                    ?>
+
+                   
                   </div>
                   <div class="menu-name">
                     <div class="d-flex">
-                      <h6><?php echo $fetch_info['name'] ?> /#<?php echo $fetch_info['user_id'] ?></h6>
+                      <h6><?php echo $fetch_info['name'] ?> / #<?php echo $fetch_info['user_id'] ?></h6>
              
                      </div>
                     
@@ -37,7 +55,7 @@
                       <i class="material-icons color-item" style="font-size: 25px;" >manage_accounts</i>
                     </button>
               
-                    <span class="menu-text">Address</span>
+                    <span class="menu-text">Profile</span>
                   </a>
 
                   <a href="./favorite.php">

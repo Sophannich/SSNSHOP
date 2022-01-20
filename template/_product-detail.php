@@ -24,7 +24,20 @@ foreach ($result1 as $row){
 
                     <div class="form-row font-size-16 font-baloo mt-3">
                       <div class="col">
-                        <button type="submit" class="btn btn-danger form-control">Buy</button>
+                      <form  method="POST" action="./backend/add-buy.php" >
+
+                                <input type="text"  name="txtuserid" value="<?php echo $fetch_info['user_id'] ?>" hidden>
+                                <input type="text"  name="txtproid" value="<?= $row['pro_id']; ?>" hidden>
+                                <input type="text"  name="txtqty" value="1" hidden data-id="<?= $row['pro_id']?? "N/A" ; ?>" class="qty_input border px-1 bg-light text-center">
+                                <input type="text"  name="txtname" value="<?= $row['pro_name']; ?>" hidden>              
+                                <input type="text"  name="txtphone" value="<?php echo $fetch_info['phone_number'] ?>" hidden>
+
+                          <button type="submit" class="btn btn-danger form-control">
+                            Buy 
+                          </button>
+
+                          </form>
+                        
                       </div>
 
                       <div class="col">
@@ -186,7 +199,7 @@ foreach ($result1 as $row){
                             
                             <form method="POST" action="./backend/add-fa.php" >
 
-                                <input type="text"  name="txtuserid" value="1" hidden>
+                                <input type="text"  name="txtuserid" value="<?php echo $fetch_info['user_id'] ?>" hidden>
                                 <input type="text"  name="txtproid" value="<?= $row['pro_id']; ?>" hidden>
                                 
                                 <input type="text"  name="txtname" value="<?= $row['pro_name']; ?>" hidden>

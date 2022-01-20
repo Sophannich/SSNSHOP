@@ -174,15 +174,27 @@ include('./backend/count-cart.php');
                     <div class="sub-total border text-center mt-2">
                     <h6 class="font-size-12 font-rale text-success py-3 text-50">Your order eligible for FREE Delivery. <i class="fas fa-check"></i></h6>
                     <div class="border-top py-4 text-center ">
+                        <h5 class="font-baloo" style="font-size: 24px;">Your  number <span class="color-second " > <?php echo $fetch_info['phone_number'] ?></span></h5>
                         <h5 class="font-baloo" style="font-size: 24px;">Subtotal <span class="color-second " ><?= $count_cart ?><span class="text-dark font-size-20"> items</span></span></h5>
-                        
                         
                         <span class="text-danger" style="font-size: 24px;"> $ <span class=" border-bottom" id="deal-price" ><?= $sum_price?></span></span>
                         <br>
 
-                        <button type="submit" class="btn btn-danger mt-4">
-                        <a href="./backend/cart-buy.php?txtuserid=<?php echo $fetch_info['user_id']?>" class="text-white"> Proceed to Buy </a>
-                        </button>
+                        <form method="POST" action="./backend/cart-buy.php" >
+
+                                <input type="text"  name="txtuserid" value="<?php echo $fetch_info['user_id'] ?>" hidden>
+                                <input type="text"  name="txtphone" value="<?php echo $fetch_info['phone_number'] ?>" hidden>
+                                
+                                <button type="submit" class="btn btn-danger mt-4">
+                                  Proceed to Buy 
+                                </button>
+ 
+                            </form>
+
+                        
+
+
+
                     </div>
                     </div>
                 </div>

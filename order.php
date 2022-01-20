@@ -85,7 +85,8 @@ require('./backend/order.php');
                     <?php foreach ($resultordered as $row){   ?>    
                         <div class="row">
                             <div class="col-sm-3">
-                                <img src="<?= $row['img1']?? "#" ; ?>" alt="<?= $row['cart_id']?? "#" ; ?>" class="img-fluid">
+                            <a href="./product-detail.php?pro_id=<?= $row['pro_id']?? "#" ; ?>"><img src="<?= $row['img1']?? "#" ; ?>" alt="<?= $row['cart_id']?? "#" ; ?>" class="img-fluid"></a>
+                                
                             </div>
                             <div class="col-sm-5">
                                 <br>
@@ -190,10 +191,10 @@ require('./backend/order.php');
                 <div class="container">
                 <?php foreach ($resultpastorder as $row){   ?>
                     <div class="row">
-                        <div class="col-sm-3">
-                            <img src="<?= $row['img1']?? "#" ; ?>" alt="cart1" class="img-fluid">
+                        <div class="col-sm-2">
+                        <a href="./product-detail.php?pro_id=<?= $row['pro_id']?? "#" ; ?>"><img src="<?= $row['img1']?? "#" ; ?>" alt="<?= $row['cart_id']?? "#" ; ?>" class="img-fluid"></a>
                         </div>
-                        <div class="col-sm-6">
+                        <div class="col-sm-5">
                             <br>
                             <h5 class="font-baloo font-size-20"><?= $row['pro_name']?? "#" ; ?> <small class="font-size-12">By <?= $row['pro_brand']?? "#" ; ?></small></h5>
                         
@@ -218,6 +219,7 @@ require('./backend/order.php');
                             <!-- !Product qty-->      
                             
                         </div>
+
                         <div class="col-sm-2">
                             <br>
                             <div class="">
@@ -237,6 +239,29 @@ require('./backend/order.php');
                             </div>
                             </div>
                         </div>
+                        <div class="col-sm-2">
+                            <br>
+                            <div class="">
+                            <div class="row">
+                            <div class="col">
+                                   <b>Order ID : </b>
+                                    <h6 class=" border-bottom text-black-50"><?= $row['order_id']?? "#" ; ?></h6>
+                                    </div>
+
+                                    <div class="col">
+                                    <b> Order Date :</b>
+                                    <h6 class="font-size-12 border-bottom text-black-50"><?= $row['date_order']?? "#" ; ?></h6>
+                                    </div>
+
+                                    <div class="col">
+                                    <b> Completed Date :</b>
+                                    <h6 class="font-size-12 border-bottom text-black-50"><?= $row['date_completed']?? "#" ; ?></h6>
+                                    </div>
+                                
+                            </div>
+                            </div>
+                        </div>
+
                     </div>
                     <hr>
                 <?php } ?>
