@@ -85,7 +85,8 @@ if($email != false && $password != false){
                 
             }
         }else{
-            header('Location: user-otp.php');
+            // header('Location: ./user-otp.php');
+            header('Location: ./login/login-user.php');
             
         }
     }

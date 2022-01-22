@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 22, 2022 at 07:25 AM
+-- Generation Time: Jan 22, 2022 at 08:14 AM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.1.1
 
@@ -215,6 +215,13 @@ CREATE TABLE `usertable` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
+-- Dumping data for table `usertable`
+--
+
+INSERT INTO `usertable` (`user_id`, `name`, `email`, `password`, `code`, `status`, `address`, `phone_number`, `gender`) VALUES
+(1, 'Sophannich', 'sophannichnhoel1@gmail.com', '$2y$10$TBH8ks6.lzqu4xaXlIiRHet9JFt8e9BR7wFJXBjLIZ/q3rb8rRVCq', 0, 'verified', 'Phnom Penh', '010401191', 'Male');
+
+--
 -- Indexes for dumped tables
 --
 
@@ -304,7 +311,7 @@ ALTER TABLE `product_detail`
 -- AUTO_INCREMENT for table `usertable`
 --
 ALTER TABLE `usertable`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
