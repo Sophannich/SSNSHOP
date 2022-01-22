@@ -191,17 +191,11 @@
                                                 
 
                                                 if ( $row['stock'] == "IN STOCK") {
-                                                    echo '
-                                                    <a href="#addcart<?php  '. $row['pro_id'].' ?>" data-toggle="modal" class="btnadd">
-                                                        <i class="material-icons">add</i>
-                                                    </a>
-                                                  ';
+                                                    include('./template/btncart.php');
                                                 } else {
                                                     
                                                     echo '
-                                                    <a href="#addcart<?php  '. $row['pro_id'].' ?>" data-toggle="modal" class="btnadd" hidden>
-                                                        <i class="material-icons">add</i>
-                                                    </a>
+                                                   
                                                     ';
                                                 };
 

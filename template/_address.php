@@ -21,6 +21,7 @@
               <label>Gender</label>
               <select class="form-control" name="txtgender">
                 <option ><?php echo $fetch_info['gender'] ?></option>
+                <option>Private</option>
                 <option>Male</option>
                 <option>Female</option>
               </select>
