@@ -12,8 +12,8 @@
               <form method="POST" action="./backend/update_address.php" class="m-2">
               <br>
               <label for="validationCustom01">User ID</label>
-              <input  name="txtuserid" type="text" class="form-control"  placeholder="Username" id="validationCustom01" value="<?php echo $fetch_info['user_id'] ?>" hidden>
-              <input type="text" class="form-control"  placeholder="Username" id="validationCustom01" value="<?php echo $fetch_info['user_id'] ?>" disabled>
+              <input  name="txtuserid" type="text" class="form-control"  placeholder="User ID" id="validationCustom01" value="<?php echo $fetch_info['user_id'] ?>" hidden>
+              <input type="text" class="form-control"  placeholder="User ID" id="validationCustom01" value="<?php echo $fetch_info['user_id'] ?>" disabled>
               <br>
               <label for="validationCustom01">Username</label>
               <input name="txtusername" type="text" class="form-control"  placeholder="Username" id="validationCustom01" value="<?php echo $fetch_info['name'] ?>">

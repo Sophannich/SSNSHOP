@@ -16,7 +16,7 @@ include('../backend/DBController.php');
 		$proid=$_POST['txtproid'];
         $qty=$_POST['txtqty'];
 
-		$conn->query("INSERT INTO cart(user_id,pro_id,qty,cart_status,order_id,date_order,phone) values ('$userid','$proid','$qty','Order', '$id_order','$date_order','$number')");
+		$conn->query("INSERT INTO cart(user_id,pro_id,qty,cart_status,order_id,date_order,phone) values ('$userid','$proid','$qty','Requested', '$id_order','$date_order','$number')");
 
 
 		header("location: ../order.php"); 

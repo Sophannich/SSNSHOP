@@ -5,6 +5,16 @@ body {
   font-size: 13px;
 }
 
+a:hover {
+  text-decoration: none;
+  color: black;
+}
+
+a {
+  text-decoration: none;
+  color: #003859;
+}
+
 /* Color Class */
 .color-item {
   color: #FF9933;
@@ -90,23 +100,27 @@ body {
   color: black;
 }
 
-#addEmployeeModal .btn {
+.btn {
   border: none;
 }
-#addEmployeeModal .menu-header {
+
+.menu-header {
   height: 40px;
   padding-top: 5 px;
 }
-#addEmployeeModal .menu-header img {
+
+.menu-header img {
   width: 70px;
   margin-top: 4px;
 }
-#addEmployeeModal .menu-profile {
+
+.menu-profile {
   padding-top: 5px;
   height: 170px;
   background: #FF9933;
 }
-#addEmployeeModal .menu-box-pf {
+
+.menu-box-pf {
   width: 60px;
   height: 60px;
   border: white solid 2px;
@@ -114,48 +128,57 @@ body {
   margin-top: 25px;
   margin-left: 20px;
 }
-#addEmployeeModal .menu-box-pf img {
+
+.menu-box-pf img {
   width: 100%;
   height: 100%;
   border-radius: 100%;
 }
-#addEmployeeModal .menu-name {
+
+.menu-name {
   display: flex;
   margin-top: 50px;
   margin-left: 20px;
 }
-#addEmployeeModal .menu-name h6 {
+
+.menu-name h6 {
   color: white;
   font-size: 18px;
   font-family: "Siemreap", Rubik;
 }
-#addEmployeeModal .menu-name a {
+
+.menu-name a {
   color: white;
   font-size: 16px;
   font-family: "Siemreap", Rubik;
 }
-#addEmployeeModal .menu-btn a {
+
+.menu-btn a {
   height: 55px;
   width: 100%;
   text-align: left;
   padding-top: -8px;
   display: flex;
 }
-#addEmployeeModal .menu-btn a:hover {
+
+.menu-btn a:hover {
   text-decoration: none;
   background: #ecf0f1;
 }
-#addEmployeeModal .menu-btn i {
+
+.menu-btn i {
   padding-left: 25px;
 }
-#addEmployeeModal .menu-text {
+
+.menu-text {
   font-family: "Siemreap", Rubik;
   font-size: 16px;
   color: #505457;
   padding-left: 20px;
   padding-top: 15px;
 }
-#addEmployeeModal .menu-number {
+
+.menu-number {
   width: 20px;
   height: 20px;
   border-radius: 100%;
@@ -167,10 +190,12 @@ body {
   margin-top: 5px;
   position: absolute;
 }
-#addEmployeeModal .menu-number b {
+
+.menu-number b {
   color: white;
 }
-#addEmployeeModal .menu-info span {
+
+.menu-info span {
   font-size: 14px;
 }
 
@@ -254,6 +279,7 @@ body {
 }
 #product .procard:hover {
   box-shadow: 0 0 5px rgba(255, 136, 0, 0.945);
+  background: #ecf0f1;
 }
 #product .procard {
   background: white;
@@ -688,6 +714,124 @@ body {
 .item {
   background: transparent;
   font-size: 16px;
+}
+
+.col-xl-3 .h5 {
+  color: #003859;
+}
+
+.col-xl-3 i {
+  font-size: 25px;
+  color: #5D6D7E;
+}
+
+.shadow:hover {
+  background: #ecf0f1;
+}
+
+.border-left-paid {
+  border-left: #239B56 solid 10px;
+  color: #239B56;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+.border-left-order {
+  border-left: #003859 solid 10px;
+  color: #003859;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+.border-left-completed {
+  border-left: #17A2B8 solid 10px;
+  color: #17A2B8;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+.border-left-comfirmed {
+  border-left: #8E44AD solid 10px;
+  color: #8E44AD;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+.border-left-request {
+  border-left: #F1C40F solid 10px;
+  color: #F1C40F;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+.border-left-cancel {
+  border-left: #B03A2E solid 10px;
+  color: #B03A2E;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+.border-left-customer {
+  border-left: #2471A3 solid 10px;
+  color: #2471A3;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+.border-left-customer-product {
+  border-left: #138D75 solid 10px;
+  color: #138D75;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+.border-left-out {
+  border-left: #E74C3C solid 10px;
+  color: #E74C3C;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+.col-5 small, .col small {
+  font-size: 9px;
+  color: #003859;
+  font-weight: bold;
+  margin-left: -25px;
+}
+
+.card-body b, .card-body span {
+  font-size: 14px;
+  color: #003859;
+}
+
+.btn-complete {
+  background: #17A2B8;
+  color: white;
+  width: 80px;
+}
+
+.btn-comfirm {
+  background: #8E44AD;
+  color: white;
+  width: 80px;
+}
+
+.btn-cancel {
+  background: red;
+  color: white;
+  width: 80px;
+}
+
+.btn-new {
+  background: #16A085;
+  color: white;
+  width: 100px;
+}
+
+.btn-add {
+  background: #3498DB;
+  color: white;
+  width: 100px;
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -13,7 +13,7 @@ $number=$_POST['txtphone'];
 
 
 
-$conn->query("UPDATE  `cart` SET `cart_status`='Order', `date_order` = '$date_order', `order_id`='$id_order', `phone`='$number' WHERE `user_id`='$userid' AND cart_status='Cart' ");
+$conn->query("UPDATE  `cart` SET `cart_status`='Requested', `date_order` = '$date_order', `order_id`='$id_order', `phone`='$number' WHERE `user_id`='$userid' AND cart_status='Cart' ");
 
 // header('Location: '.$_SERVER['HTTP_REFERER']);
 header("location: ../order.php"); 

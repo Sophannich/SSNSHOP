@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 22, 2022 at 08:14 AM
+-- Generation Time: Feb 04, 2022 at 04:45 PM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.1.1
 
@@ -22,6 +22,22 @@ SET time_zone = "+00:00";
 --
 CREATE DATABASE IF NOT EXISTS `ssnshop` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
 USE `ssnshop`;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `admin_profile`
+--
+
+CREATE TABLE `admin_profile` (
+  `admin_id` int(11) NOT NULL,
+  `username` varchar(225) NOT NULL,
+  `email` varchar(225) NOT NULL,
+  `password` varchar(225) NOT NULL,
+  `mobile_phone` varchar(225) NOT NULL,
+  `status` varchar(225) NOT NULL,
+  `created_at` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -84,8 +100,19 @@ CREATE TABLE `cart` (
   `order_id` varchar(255) NOT NULL,
   `date_order` datetime DEFAULT NULL,
   `date_completed` datetime DEFAULT NULL,
-  `phone` varchar(255) NOT NULL
+  `phone` varchar(255) NOT NULL,
+  `date_comfirmed` datetime DEFAULT NULL,
+  `price_cart` float NOT NULL,
+  `reason` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `cart`
+--
+
+INSERT INTO `cart` (`cart_id`, `user_id`, `pro_id`, `qty`, `cart_status`, `order_id`, `date_order`, `date_completed`, `phone`, `date_comfirmed`, `price_cart`, `reason`) VALUES
+(1, 1, 2, 1, 'Ordered', '2202045284', '2022-02-04 22:43:58', NULL, '010401191', NULL, 0, ''),
+(2, 1, 1, 1, 'Reject', '2202045444', '2022-02-04 22:44:04', NULL, '010401191', NULL, 0, '');
 
 -- --------------------------------------------------------
 
@@ -126,75 +153,18 @@ CREATE TABLE `product` (
   `pro_rate` int(11) NOT NULL,
   `category` varchar(255) NOT NULL,
   `gift` varchar(255) NOT NULL,
-  `warranty` varchar(255) NOT NULL,
-  `description` varchar(11) NOT NULL
+  `warranty` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `product`
 --
 
-INSERT INTO `product` (`pro_id`, `pro_brand`, `pro_name`, `price`, `discount`, `total`, `date_in`, `stock`, `status`, `img1`, `img2`, `img3`, `img4`, `img5`, `img6`, `detail`, `pro_rate`, `category`, `gift`, `warranty`, `description`) VALUES
-(1, 'Apple', 'iPhone 13 Pro Max', 1500.00, 10, 1200.00, '2021-11-17 12:13:55', 'IN STOCK', 'NEW', 'https://gadgetworld254.co.ke/wp-content/uploads/2021/10/iphone-13-pro-max-blue-256gb-in-Kenya-866x1024.png', 'https://gadgetworld254.co.ke/wp-content/uploads/2021/10/iphone-13-pro-max-blue-256gb-in-Kenya-866x1024.png', 'https://gadgetworld254.co.ke/wp-content/uploads/2021/10/iphone-13-pro-max-blue-256gb-in-Kenya-866x1024.png', 'https://gadgetworld254.co.ke/wp-content/uploads/2021/10/iphone-13-pro-max-blue-256gb-in-Kenya-866x1024.png', 'https://gadgetworld254.co.ke/wp-content/uploads/2021/10/iphone-13-pro-max-blue-256gb-in-Kenya-866x1024.png', 'https://gadgetworld254.co.ke/wp-content/uploads/2021/10/iphone-13-pro-max-blue-256gb-in-Kenya-866x1024.png', 'iPhone 13 Pro Max Super Retina XDR display with ProMotion; 6.7‑inch (diagonal) all‑screen OLED display; 2778‑by‑1284-pixel resolution at 458 ppi; The iPhone 13 Pro Max display has rounded corners that follow a beautiful curved design, and these corners ar ទូរស័ព្ទ', 200, 'Phone', 'មានកាដូរថែមជូន ១០ មុខ', 'ធានារយៈពេល​ ១ ឆ្នាំ', 'On'),
-(2, 'SAMSUNG', 'Samsung Galaxy S21 Ultra', 1099.99, 10, 989.99, '2021-11-22 15:27:50', 'IN STOCK', 'New', 'https://cdn.mos.cms.futurecdn.net/aw3MDrGkdWyjvQ4EbGzmaW-970-80.jpg.webp', 'https://cdn.mos.cms.futurecdn.net/aw3MDrGkdWyjvQ4EbGzmaW-970-80.jpg.webp', 'https://cdn.mos.cms.futurecdn.net/aw3MDrGkdWyjvQ4EbGzmaW-970-80.jpg.webp', 'https://cdn.mos.cms.futurecdn.net/aw3MDrGkdWyjvQ4EbGzmaW-970-80.jpg.webp', 'https://cdn.mos.cms.futurecdn.net/aw3MDrGkdWyjvQ4EbGzmaW-970-80.jpg.webp', 'https://cdn.mos.cms.futurecdn.net/aw3MDrGkdWyjvQ4EbGzmaW-970-80.jpg.webp', 'The Samsung Galaxy S21 Ultra is Samsung’s top, premium flagship for 2021, and what a phone it is. For the first time Samsung has offered S Pen support on an S-range handset here, meaning that you can optionally get the Galaxy Note range’s best feature.', 300, 'Phone', '', '', ''),
-(3, 'LG', 'Samsung Galaxy S21 Ultra', 1099.99, 10, 989.99, '2021-11-22 15:27:50', 'OUT STOCK', 'Second', 'https://cdn.mos.cms.futurecdn.net/aw3MDrGkdWyjvQ4EbGzmaW-970-80.jpg.webp', 'https://cdn.mos.cms.futurecdn.net/aw3MDrGkdWyjvQ4EbGzmaW-970-80.jpg.webp', 'https://cdn.mos.cms.futurecdn.net/aw3MDrGkdWyjvQ4EbGzmaW-970-80.jpg.webp', 'https://cdn.mos.cms.futurecdn.net/aw3MDrGkdWyjvQ4EbGzmaW-970-80.jpg.webp', 'https://cdn.mos.cms.futurecdn.net/aw3MDrGkdWyjvQ4EbGzmaW-970-80.jpg.webp', 'https://cdn.mos.cms.futurecdn.net/aw3MDrGkdWyjvQ4EbGzmaW-970-80.jpg.webp', 'The Samsung Galaxy S21 Ultra is Samsung’s top, premium flagship for 2021, and what a phone it is. For the first time Samsung has offered S Pen support on an S-range handset here, meaning that you can optionally get the Galaxy Note range’s best feature.', 300, 'Phone', '', '', ''),
-(4, 'MSI', 'MSI GS76 Stealth 11UH-625CZ', 3900.00, 10, 3510.00, '2021-11-17 12:13:55', 'IN STOCK', 'New', 'https://img.msi-shop.sk/S/2021/05/103380-herny-notebook-msi.stealth-gs76-11uh-06.webp', 'https://img.msi-shop.sk/S/2021/05/103376-herny-notebook-msi.stealth-gs76-11uh-02.webp', 'https://img.msi-shop.sk/S/2021/05/103377-herny-notebook-msi.stealth-gs76-11uh-03.webp', 'https://img.msi-shop.sk/S/2021/05/103378-herny-notebook-msi.stealth-gs76-11uh-04.webp', 'https://img.msi-shop.sk/S/2021/05/103379-herny-notebook-msi.stealth-gs76-11uh-05.webp', 'https://img.msi-shop.sk/S/2021/05/103380-herny-notebook-msi.stealth-gs76-11uh-06.webp', 'Intel Core i9-11900H (2.50-4.90GHz) (BNCH-22334b) 17.3\" WQHD 2560x1440px Matt IPS 240Hz LED LCD 32GB DDR4 3200MHz M.2 PCIe SSD 2000GB nVidia GeForce RTX 3080 16GB GDDR6 WiFi / BT / USB 3.2 / USB 3.2 Type-C / Thunderbolt 4 / LAN / HDMI / without DVD Win10H', 400, 'Computer', '', '', 'Off');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `product_detail`
---
-
-CREATE TABLE `product_detail` (
-  `pro_d_id` int(11) NOT NULL,
-  `pro_id` int(11) NOT NULL,
-  `technology` varchar(255) NOT NULL,
-  `speed` varchar(255) NOT NULL,
-  `announced` varchar(255) NOT NULL,
-  `statuss` varchar(255) NOT NULL,
-  `dimensions` varchar(255) NOT NULL,
-  `weight` varchar(255) NOT NULL,
-  `sim` varchar(255) NOT NULL,
-  `type` varchar(255) NOT NULL,
-  `size` varchar(255) NOT NULL,
-  `resolution` varchar(255) NOT NULL,
-  `protection` varchar(255) NOT NULL,
-  `os` varchar(255) NOT NULL,
-  `chipset` varchar(255) NOT NULL,
-  `cpu` varchar(255) NOT NULL,
-  `gpu` varchar(255) NOT NULL,
-  `card_slot` varchar(255) NOT NULL,
-  `internal` varchar(255) NOT NULL,
-  `primary` varchar(255) NOT NULL,
-  `features` varchar(255) NOT NULL,
-  `video` varchar(255) NOT NULL,
-  `secondary` varchar(255) NOT NULL,
-  `loudspeaker` varchar(255) NOT NULL,
-  `mm_jack` varchar(255) NOT NULL,
-  `wlan` varchar(255) NOT NULL,
-  `bluetooth` varchar(255) NOT NULL,
-  `gps` varchar(255) NOT NULL,
-  `nfc` varchar(255) NOT NULL,
-  `radio` varchar(255) NOT NULL,
-  `usb` varchar(255) NOT NULL,
-  `sensors` varchar(255) NOT NULL,
-  `battery` varchar(255) NOT NULL,
-  `stand_by` varchar(255) NOT NULL,
-  `music_play` varchar(255) NOT NULL,
-  `colors` varchar(255) NOT NULL,
-  `source` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Dumping data for table `product_detail`
---
-
-INSERT INTO `product_detail` (`pro_d_id`, `pro_id`, `technology`, `speed`, `announced`, `statuss`, `dimensions`, `weight`, `sim`, `type`, `size`, `resolution`, `protection`, `os`, `chipset`, `cpu`, `gpu`, `card_slot`, `internal`, `primary`, `features`, `video`, `secondary`, `loudspeaker`, `mm_jack`, `wlan`, `bluetooth`, `gps`, `nfc`, `radio`, `usb`, `sensors`, `battery`, `stand_by`, `music_play`, `colors`, `source`) VALUES
-(1, 1, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
-(2, 2, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
-(3, 3, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
-(4, 4, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '');
+INSERT INTO `product` (`pro_id`, `pro_brand`, `pro_name`, `price`, `discount`, `total`, `date_in`, `stock`, `status`, `img1`, `img2`, `img3`, `img4`, `img5`, `img6`, `detail`, `pro_rate`, `category`, `gift`, `warranty`) VALUES
+(1, 'Apple', 'iPhone 13 Pro Max', 1500.00, 10, 1200.00, '2021-11-17 12:13:55', 'IN STOCK', 'NEW', 'https://gadgetworld254.co.ke/wp-content/uploads/2021/10/iphone-13-pro-max-blue-256gb-in-Kenya-866x1024.png', 'https://gadgetworld254.co.ke/wp-content/uploads/2021/10/iphone-13-pro-max-blue-256gb-in-Kenya-866x1024.png', 'https://gadgetworld254.co.ke/wp-content/uploads/2021/10/iphone-13-pro-max-blue-256gb-in-Kenya-866x1024.png', 'https://gadgetworld254.co.ke/wp-content/uploads/2021/10/iphone-13-pro-max-blue-256gb-in-Kenya-866x1024.png', 'https://gadgetworld254.co.ke/wp-content/uploads/2021/10/iphone-13-pro-max-blue-256gb-in-Kenya-866x1024.png', 'https://gadgetworld254.co.ke/wp-content/uploads/2021/10/iphone-13-pro-max-blue-256gb-in-Kenya-866x1024.png', 'iPhone 13 Pro Max Super Retina XDR display with ProMotion; 6.7‑inch (diagonal) all‑screen OLED display; 2778‑by‑1284-pixel resolution at 458 ppi; The iPhone 13 Pro Max display has rounded corners that follow a beautiful curved design, and these corners ar ទូរស័ព្ទ', 200, 'Phone', 'មានកាដូរថែមជូន ១០ មុខ', 'ធានារយៈពេល​ ១ ឆ្នាំ'),
+(2, 'SAMSUNG', 'Samsung Galaxy S21 Ultra', 1099.99, 10, 989.99, '2021-11-22 15:27:50', 'IN STOCK', 'New', 'https://cdn.mos.cms.futurecdn.net/aw3MDrGkdWyjvQ4EbGzmaW-970-80.jpg.webp', 'https://cdn.mos.cms.futurecdn.net/aw3MDrGkdWyjvQ4EbGzmaW-970-80.jpg.webp', 'https://cdn.mos.cms.futurecdn.net/aw3MDrGkdWyjvQ4EbGzmaW-970-80.jpg.webp', 'https://cdn.mos.cms.futurecdn.net/aw3MDrGkdWyjvQ4EbGzmaW-970-80.jpg.webp', 'https://cdn.mos.cms.futurecdn.net/aw3MDrGkdWyjvQ4EbGzmaW-970-80.jpg.webp', 'https://cdn.mos.cms.futurecdn.net/aw3MDrGkdWyjvQ4EbGzmaW-970-80.jpg.webp', 'The Samsung Galaxy S21 Ultra is Samsung’s top, premium flagship for 2021, and what a phone it is. For the first time Samsung has offered S Pen support on an S-range handset here, meaning that you can optionally get the Galaxy Note range’s best feature.', 400, 'Phone', '', ''),
+(3, 'LG', 'Samsung Galaxy S21 Ultra', 1099.99, 10, 989.99, '2021-11-22 15:27:50', 'OUT STOCK', 'Second', 'https://cdn.mos.cms.futurecdn.net/aw3MDrGkdWyjvQ4EbGzmaW-970-80.jpg.webp', 'https://cdn.mos.cms.futurecdn.net/aw3MDrGkdWyjvQ4EbGzmaW-970-80.jpg.webp', 'https://cdn.mos.cms.futurecdn.net/aw3MDrGkdWyjvQ4EbGzmaW-970-80.jpg.webp', 'https://cdn.mos.cms.futurecdn.net/aw3MDrGkdWyjvQ4EbGzmaW-970-80.jpg.webp', 'https://cdn.mos.cms.futurecdn.net/aw3MDrGkdWyjvQ4EbGzmaW-970-80.jpg.webp', 'https://cdn.mos.cms.futurecdn.net/aw3MDrGkdWyjvQ4EbGzmaW-970-80.jpg.webp', 'The Samsung Galaxy S21 Ultra is Samsung’s top, premium flagship for 2021, and what a phone it is. For the first time Samsung has offered S Pen support on an S-range handset here, meaning that you can optionally get the Galaxy Note range’s best feature.', 300, 'Phone', '', ''),
+(4, 'MSI', 'MSI GS76 Stealth 11UH-625CZ', 3900.00, 10, 3510.00, '2021-11-17 12:13:55', 'IN STOCK', 'New', 'https://img.msi-shop.sk/S/2021/05/103380-herny-notebook-msi.stealth-gs76-11uh-06.webp', 'https://img.msi-shop.sk/S/2021/05/103376-herny-notebook-msi.stealth-gs76-11uh-02.webp', 'https://img.msi-shop.sk/S/2021/05/103377-herny-notebook-msi.stealth-gs76-11uh-03.webp', 'https://img.msi-shop.sk/S/2021/05/103378-herny-notebook-msi.stealth-gs76-11uh-04.webp', 'https://img.msi-shop.sk/S/2021/05/103379-herny-notebook-msi.stealth-gs76-11uh-05.webp', 'https://img.msi-shop.sk/S/2021/05/103380-herny-notebook-msi.stealth-gs76-11uh-06.webp', 'Intel Core i9-11900H (2.50-4.90GHz) (BNCH-22334b) 17.3\" WQHD 2560x1440px Matt IPS 240Hz LED LCD 32GB DDR4 3200MHz M.2 PCIe SSD 2000GB nVidia GeForce RTX 3080 16GB GDDR6 WiFi / BT / USB 3.2 / USB 3.2 Type-C / Thunderbolt 4 / LAN / HDMI / without DVD Win10H', 100, 'Computer', '', '');
 
 -- --------------------------------------------------------
 
@@ -219,11 +189,17 @@ CREATE TABLE `usertable` (
 --
 
 INSERT INTO `usertable` (`user_id`, `name`, `email`, `password`, `code`, `status`, `address`, `phone_number`, `gender`) VALUES
-(1, 'Sophannich', 'sophannichnhoel1@gmail.com', '$2y$10$TBH8ks6.lzqu4xaXlIiRHet9JFt8e9BR7wFJXBjLIZ/q3rb8rRVCq', 0, 'verified', 'Phnom Penh', '010401191', 'Male');
+(1, 'Sophannich', 'sophannichnhoel1@gmail.com', '$2y$10$TAFink31hl7UdfJXWP9/GuPhfDxlyi3LPx0fGGZsl5TGJw/TYTLsG', 0, 'verified', 'Phnom Penh', '010401191', 'Male');
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `admin_profile`
+--
+ALTER TABLE `admin_profile`
+  ADD PRIMARY KEY (`admin_id`);
 
 --
 -- Indexes for table `banner_area`
@@ -256,12 +232,6 @@ ALTER TABLE `product`
   ADD PRIMARY KEY (`pro_id`);
 
 --
--- Indexes for table `product_detail`
---
-ALTER TABLE `product_detail`
-  ADD PRIMARY KEY (`pro_d_id`);
-
---
 -- Indexes for table `usertable`
 --
 ALTER TABLE `usertable`
@@ -270,6 +240,12 @@ ALTER TABLE `usertable`
 --
 -- AUTO_INCREMENT for dumped tables
 --
+
+--
+-- AUTO_INCREMENT for table `admin_profile`
+--
+ALTER TABLE `admin_profile`
+  MODIFY `admin_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `banner_area`
@@ -287,7 +263,7 @@ ALTER TABLE `brand`
 -- AUTO_INCREMENT for table `cart`
 --
 ALTER TABLE `cart`
-  MODIFY `cart_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `cart_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `favorite`
@@ -300,12 +276,6 @@ ALTER TABLE `favorite`
 --
 ALTER TABLE `product`
   MODIFY `pro_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
-
---
--- AUTO_INCREMENT for table `product_detail`
---
-ALTER TABLE `product_detail`
-  MODIFY `pro_d_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `usertable`

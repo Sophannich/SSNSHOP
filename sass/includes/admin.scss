@@ -1,0 +1,123 @@
+.col-xl-3 .h5{
+    color: #003859;
+}
+
+.col-xl-3 i{
+    font-size: 25px;
+    color: #5D6D7E;
+}
+
+.shadow:hover{
+    background: #ecf0f1;
+}
+
+
+.border-left-paid{
+    border-left: #239B56 solid 10px;
+    color: #239B56;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    
+}
+
+.border-left-order{
+border-left: #003859 solid 10px;
+color: #003859;
+border-top-left-radius: 5px;
+border-bottom-left-radius: 5px;
+
+}
+
+.border-left-completed{
+border-left: #17A2B8 solid 10px;
+color:#17A2B8 ;
+border-top-left-radius: 5px;
+border-bottom-left-radius: 5px;
+}
+
+.border-left-comfirmed {
+border-left: #8E44AD solid 10px;
+color: #8E44AD;
+border-top-left-radius: 5px;
+border-bottom-left-radius: 5px;
+}
+
+.border-left-request {
+    border-left: #F1C40F solid 10px;
+    color: #F1C40F;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.border-left-cancel {
+    border-left: #B03A2E solid 10px;
+    color: #B03A2E;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.border-left-customer {
+    border-left: #2471A3 solid 10px;
+    color: #2471A3;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.border-left-customer-product {
+    border-left: #138D75 solid 10px;
+    color: #138D75;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.border-left-out {
+    border-left: #E74C3C solid 10px;
+    color: #E74C3C;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+
+
+.col-5 small, .col small{
+    font-size: 9px;
+    color: #003859;
+    font-weight: bold;
+    margin-left: -25px;
+}
+
+.card-body b, .card-body span{
+    font-size: 14px;
+    color: #003859;
+}
+
+.btn-complete{
+    background:#17A2B8 ;
+    color: white;
+    width: 80px;
+}
+
+.btn-comfirm{
+    background:#8E44AD ;
+    color: white;
+    width: 80px;
+}
+
+.btn-cancel{
+    background: red ;
+    color: white;
+    width: 80px;
+}
+
+.btn-new {
+    background: #16A085;
+    color: white;
+    width: 100px;
+}
+
+.btn-add {
+    background: #3498DB;
+    color: white;
+    width: 100px;
+}
+
