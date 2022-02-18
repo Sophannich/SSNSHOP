@@ -36,7 +36,7 @@ foreach ($result as $row){
                                 <?php 
                                                 
 
-                                                if ( $row['stock'] == "IN STOCK") {
+                                                if ( $row['stock'] == "IN STOCK" and $row['total']>0) {
                                                     echo '
                                                     <button type="submit" class="btn btn-danger form-control">
                                                       Buy 
@@ -72,7 +72,7 @@ foreach ($result as $row){
                                 <?php 
                                                 
 
-                                                if ( $row['stock'] == "IN STOCK") {
+                                                if ( $row['stock'] == "IN STOCK" and $row['total']>0) {
                                                     echo '
                                                     <button type="submit" class="btn btn-warning form-control">Add to Cart</button>
                                                   ';
@@ -81,7 +81,7 @@ foreach ($result as $row){
                                                     echo '
                                                     <button type="submit" class="btn btn-warning form-control" disabled>Add to Cart</button>
                                                     ';
-                                                };
+                                                }
 
                                     ?>                    
 

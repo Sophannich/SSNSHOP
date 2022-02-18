@@ -4,10 +4,8 @@ $home=0;
 include('../admin/template/_header.php');
 include('../admin/template/_product_total.php');
 
+
 ?>
-
-
-
 
 
 <?php

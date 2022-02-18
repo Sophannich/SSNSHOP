@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 04, 2022 at 04:45 PM
+-- Generation Time: Feb 16, 2022 at 03:25 PM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.1.1
 
@@ -112,7 +112,9 @@ CREATE TABLE `cart` (
 
 INSERT INTO `cart` (`cart_id`, `user_id`, `pro_id`, `qty`, `cart_status`, `order_id`, `date_order`, `date_completed`, `phone`, `date_comfirmed`, `price_cart`, `reason`) VALUES
 (1, 1, 2, 1, 'Ordered', '2202045284', '2022-02-04 22:43:58', NULL, '010401191', NULL, 0, ''),
-(2, 1, 1, 1, 'Reject', '2202045444', '2022-02-04 22:44:04', NULL, '010401191', NULL, 0, '');
+(2, 1, 1, 1, 'Reject', '2202045444', '2022-02-04 22:44:04', NULL, '010401191', NULL, 0, 'Sorry This product is out stock. Can you order other item?'),
+(3, 1, 1, 1, 'Requested', '2202047734', '2022-02-04 22:51:10', NULL, '010401191', NULL, 0, ''),
+(4, 1, 1, 1, 'Requested', '2202046635', '2022-02-04 22:53:49', NULL, '010401191', NULL, 0, '');
 
 -- --------------------------------------------------------
 
@@ -263,7 +265,7 @@ ALTER TABLE `brand`
 -- AUTO_INCREMENT for table `cart`
 --
 ALTER TABLE `cart`
-  MODIFY `cart_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `cart_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `favorite`

@@ -20,7 +20,7 @@ include("template/_address.php");
             <tr>
               <td>
 
-                <div class=" d-flex" > 
+                <div class=" d-flex" >
                   
                   <a href="#addEmployeeModal" data-toggle="modal"><i class="material-icons color-item" id="#addEmployeeModal" style="font-size: 26px; cursor: pointer;" >menu</i></a>
                 </div>

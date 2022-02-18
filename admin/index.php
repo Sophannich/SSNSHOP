@@ -220,7 +220,7 @@ include('../admin/template/_header.php');
                                             <div class="col mr-2">
                                                 <div class=" font-weight-bold text-uppercase mb-1">
                                                     Total (Products)</div>
-                                                <div class="h5 mb-0 font-weight-bold ">210</div>
+                                                <div class="h5 mb-0 font-weight-bold "><?= $count_pro?></div>
                                             </div>
                                             <div class="col-auto">
                                                 <i class="material-icons" >attach_money</i>

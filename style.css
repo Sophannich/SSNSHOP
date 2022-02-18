@@ -716,6 +716,13 @@ a {
   font-size: 16px;
 }
 
+.one-line {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+}
+
 .col-xl-3 .h5 {
   color: #003859;
 }
@@ -830,6 +837,12 @@ a {
 
 .btn-add {
   background: #3498DB;
+  color: white;
+  width: 100px;
+}
+
+.btn-de {
+  background: #DC3545;
   color: white;
   width: 100px;
 }

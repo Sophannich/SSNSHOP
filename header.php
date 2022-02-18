@@ -100,5 +100,5 @@ if($email != false && $password != false){
     <a class="navbar-brand" href="#"><?php echo $fetch_info['user_id'] ?></a> -->
     <!-- <button type="button" class="btn btn-light"><a href="./login/logout-user.php">Logout</a></button> -->
                                         <?php 
-										include('./template/button.php'); 
+										// include('./template/button.php'); 
 										?>

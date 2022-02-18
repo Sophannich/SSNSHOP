@@ -1,9 +1,9 @@
-<button class="border-0" style="background: transparent;">
+<button class="border-0" style="background: transparent;" >
 
-<a href="./product-detail.php?pro_id=<?= $row['pro_id']?? "#" ; ?>" style="text-decoration: none; " class="btnhover">
+<a href="./product-detail.php?pro_id=<?= $row['pro_id']?? "#" ; ?>" style="text-decoration: none; " class="btnhover" >
 
     <div id="prosearch" class="procard" >
-        <div class="protopcard">
+        <div class="protopcard" >
             <div class="proimgnew">
 
 
@@ -63,7 +63,7 @@
                                                             } else {
 
                                                                 echo '
-                                                                <span class="text-danger border" style="border-radius: 5px;">&nbsp; '. $row['stock'] ?? "#" ;'</span>
+                                                                <span class="text-danger border" style="border-radius: 5px;">&nbsp; OUT STOCK</span>
                                                                 ';
                                                             };
 
@@ -174,7 +174,9 @@
 </a>
 
 </button>
-
+<a href="#addaa<?php echo $row['pro_id']; ?>" data-toggle="modal" class="add-fa icon_favorite">
+                            <i class="material-icons color-item" style="font-size: 26px;" >favorite_border</i>
+						</a>
 
 
 <?php
@@ -190,7 +192,7 @@
                                     <?php 
                                                 
 
-                                                if ( $row['stock'] == "IN STOCK") {
+                                                if ( $row['stock'] == "IN STOCK" and $row['total']>0) {
                                                     include('./template/btncart.php');
                                                 } else {
                                                     
@@ -201,5 +203,27 @@
 
                                     ?> 
 
-                 
 
+
+
+
+
+                 
+<div id="addaa" class="modal fade">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                
+                <div class="menu-header">
+                  <a href="./index.php"><img src="./assets/logos/ssnshop.gif" class="logo"></a>          
+                    <button type="button" class="close pr-2 pt-1" data-dismiss="modal"><i class="material-icons">close</i></button>    
+                </div>
+
+                <div class="menu-profile">
+
+                </div>
+                
+
+                <br class="m-1">
+              </div>
+            </div>
+          </div>

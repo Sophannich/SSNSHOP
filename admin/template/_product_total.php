@@ -15,7 +15,7 @@
                         <div class="col-12">
                             <div class="row">
                                 <div class="col">
-                                <h5 style="color: #5D6D7E;">Product Total</h5>
+                                <h5 style="color: #5D6D7E;">Product Total (<?= $count_pro?>)</h5>
                                 </div>
                                 <div class="col text-right">
                                     <a href="./add_product.php">
@@ -35,7 +35,10 @@
                         
                     <?php 
 	
-                        include('../admin/template/card/card_product.php');
+                        foreach ($pro_total as $row){
+                        include('../admin/template/_product.php');
+                                
+                        }
 
                     ?>
 

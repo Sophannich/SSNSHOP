@@ -12,9 +12,11 @@
 
                         
                     <?php 
-	
+                      foreach ($pro_out_stock as $row){
+
                         include('../admin/template/card/card_product.php');
 
+                      }
                     ?>
 
                         

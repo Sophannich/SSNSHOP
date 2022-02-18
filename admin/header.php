@@ -36,7 +36,8 @@
     include('../admin/menu.php');
     include('../admin/template/_reason.php');
     include('../admin/template/_update_customer.php');
- 
+    include('./backend/count.php');
+    include('./backend/select_product.php');
  
 
  ?>
