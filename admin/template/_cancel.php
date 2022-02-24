@@ -4,7 +4,7 @@
                     <div class="mb-4">
 
                             <br>
-                            <h5 style="color: #5D6D7E;">Cancelled</h5>
+                            <h5 style="color: #5D6D7E;">Cancelled (<?= $count_all_pro_cancelled?>)</h5>
                             <hr>
                     </div>
 
@@ -12,10 +12,11 @@
                     <div class="row">
 
                         
-                        <?php 
+                        <?php          
 	
+                            foreach ($pro_cancel as $row){
                             include('../admin/template/card/card_cancel.php');
-
+                                 }
                         ?>
 
                         

@@ -184,6 +184,7 @@ include('./backend/count-cart.php');
 
                                 <input type="text"  name="txtuserid" value="<?php echo $fetch_info['user_id'] ?>" hidden>
                                 <input type="text"  name="txtphone" value="<?php echo $fetch_info['phone_number'] ?>" hidden>
+                                <input type="text"  name="txtprice" value="<?= $row['total']??0;?>" hidden>
                                 
                                 <button type="submit" class="btn btn-danger mt-4">
                                   Proceed to Buy 

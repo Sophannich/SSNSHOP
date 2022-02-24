@@ -3,7 +3,7 @@
                     <br>
                     <div class="mb-4">
                             <br>
-                            <h5 style="color: #5D6D7E;">Request Order</h5>
+                            <h5 style="color: #5D6D7E;">Request Order (<?= $count_all_pro_requested?>)</h5>
                             <hr>
                     </div>
 
@@ -12,9 +12,9 @@
 
                         
                     <?php 
-	
+                        foreach ($pro_requested as $row){
                         include('../admin/template/card/card_order.php');
-
+                        }
                     ?>
 
                         

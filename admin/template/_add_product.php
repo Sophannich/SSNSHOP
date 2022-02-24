@@ -31,7 +31,7 @@
                                     <label class="mt-3">Status</label>
                                     <select required class="form-control" name="txt_status">
                                         <option></option>
-                                        <option>NEW</option>
+                                        <option>Just Arrived</option>
                                         <option>New</option>
                                         <option>Second</option>
                                     </select>
@@ -118,7 +118,7 @@
                                         
                                     <div class="text-right">
 
-                                        <button type="submit" class="btn btn-add btn-sm mt-5">Add</button>
+                                        <button type="submit" class="btn btn-add btn-sm mt-5" <?php echo $fetch_info['adds'] ?>>Add</button>
                            
                                 </div>
 

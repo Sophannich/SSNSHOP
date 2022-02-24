@@ -5,8 +5,8 @@
 	if (isset($_POST['query'])) {
 		// code...
 		$search=$_POST['query'];
-		$stmt=$conn->prepare("SELECT * FROM `product`  WHERE pro_brand LIKE CONCAT('%',?,'%') OR detail LIKE CONCAT('%',?,'%')");
-		$stmt->bind_param("ss",$search,$search);
+		$stmt=$conn->prepare("SELECT * FROM `product`  WHERE pro_brand LIKE CONCAT('%',?,'%') OR detail LIKE CONCAT('%',?,'%') OR category LIKE CONCAT('%',?,'%') ");
+		$stmt->bind_param("sss",$search,$search,$search);
 	}else{
 		$stmt=$conn->prepare("SELECT * FROM `product` ");
 

@@ -149,6 +149,8 @@ require('./backend/order.php');
                                     <h6 class="font-size-14 border-bottom text-black-50"><?= $row['date_order']?? "#" ; ?></h6>
                                     </div>
 
+                                    
+
 
                                     
                                 </div>
@@ -356,6 +358,10 @@ require('./backend/order.php');
                                     <h6 class="font-size-12 border-bottom text-black-50"><?= $row['date_order']?? "#" ; ?></h6>
                                     </div>
 
+                                    <div class="col">
+                                    <b> Cancelled Date :</b>
+                                    <h6 class="font-size-12 border-bottom text-black-50"><?= $row['date_confirmed']?? "#" ; ?></h6>
+                                    </div>
                                 
                             </div>
                             </div>

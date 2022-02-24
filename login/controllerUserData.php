@@ -1,6 +1,7 @@
 <?php 
 session_start();
-require "connection.php";
+// require "connection.php";
+include('./../backend/DBController.php');
 $email = "";
 $name = "";
 $address="";
@@ -9,17 +10,17 @@ $errors = array();
 
 //if user signup button
 if(isset($_POST['signup'])){
-    $name = mysqli_real_escape_string($con, $_POST['name']);
-    $email = mysqli_real_escape_string($con, $_POST['email']);
-    $address = mysqli_real_escape_string($con, $_POST['address']);
-    $number = mysqli_real_escape_string($con, $_POST['number']);
-    $password = mysqli_real_escape_string($con, $_POST['password']);
-    $cpassword = mysqli_real_escape_string($con, $_POST['cpassword']);
+    $name = mysqli_real_escape_string($conn, $_POST['name']);
+    $email = mysqli_real_escape_string($conn, $_POST['email']);
+    $address = mysqli_real_escape_string($conn, $_POST['address']);
+    $number = mysqli_real_escape_string($conn, $_POST['number']);
+    $password = mysqli_real_escape_string($conn, $_POST['password']);
+    $cpassword = mysqli_real_escape_string($conn, $_POST['cpassword']);
     if($password !== $cpassword){
         $errors['password'] = "Confirm password not matched!";
     }
     $email_check = "SELECT * FROM usertable WHERE email = '$email'";
-    $res = mysqli_query($con, $email_check);
+    $res = mysqli_query($conn, $email_check);
     if(mysqli_num_rows($res) > 0){
         $errors['email'] = "Email that you have entered is already exist!";
     }
@@ -29,7 +30,7 @@ if(isset($_POST['signup'])){
         $status = "notverified";
         $insert_data = "INSERT INTO usertable (name, email, password, code, status,address,phone_number)
                         values('$name', '$email', '$encpass', '$code', '$status','$address', '$number')";
-        $data_check = mysqli_query($con, $insert_data);
+        $data_check = mysqli_query($conn, $insert_data);
         if($data_check){
             $subject = "Email Verification Code";
             $message = "Your verification code is $code";
@@ -45,9 +46,9 @@ if(isset($_POST['signup'])){
     //if user click verification code submit button
     if(isset($_POST['check'])){
         $_SESSION['info'] = "";
-        $otp_code = mysqli_real_escape_string($con, $_POST['otp']);
+        $otp_code = mysqli_real_escape_string($conn, $_POST['otp']);
         $check_code = "SELECT * FROM usertable WHERE code = $otp_code";
-        $code_res = mysqli_query($con, $check_code);
+        $code_res = mysqli_query($conn, $check_code);
         if(mysqli_num_rows($code_res) > 0){
             $fetch_data = mysqli_fetch_assoc($code_res);
             $fetch_code = $fetch_data['code'];
@@ -55,7 +56,7 @@ if(isset($_POST['signup'])){
             $code = 0;
             $status = 'verified';
             $update_otp = "UPDATE usertable SET code = $code, status = '$status' WHERE code = $fetch_code";
-            $update_res = mysqli_query($con, $update_otp);
+            $update_res = mysqli_query($conn, $update_otp);
             if($update_res){
                 $_SESSION['name'] = $name;
                 $_SESSION['email'] = $email;
@@ -71,10 +72,10 @@ if(isset($_POST['signup'])){
 
     //if user click login button
     if(isset($_POST['login'])){
-        $email = mysqli_real_escape_string($con, $_POST['email']);
-        $password = mysqli_real_escape_string($con, $_POST['password']);
+        $email = mysqli_real_escape_string($conn, $_POST['email']);
+        $password = mysqli_real_escape_string($conn, $_POST['password']);
         $check_email = "SELECT * FROM usertable WHERE email = '$email'";
-        $res = mysqli_query($con, $check_email);
+        $res = mysqli_query($conn, $check_email);
         if(mysqli_num_rows($res) > 0){
             $fetch = mysqli_fetch_assoc($res);
             $fetch_pass = $fetch['password'];
@@ -100,13 +101,13 @@ if(isset($_POST['signup'])){
 
     //if user click continue button in forgot password form
     if(isset($_POST['check-email'])){
-        $email = mysqli_real_escape_string($con, $_POST['email']);
+        $email = mysqli_real_escape_string($conn, $_POST['email']);
         $check_email = "SELECT * FROM usertable WHERE email='$email'";
-        $run_sql = mysqli_query($con, $check_email);
+        $run_sql = mysqli_query($conn, $check_email);
         if(mysqli_num_rows($run_sql) > 0){
             $code = rand(999999, 111111);
             $insert_code = "UPDATE usertable SET code = $code WHERE email = '$email'";
-            $run_query =  mysqli_query($con, $insert_code);   
+            $run_query =  mysqli_query($conn, $insert_code);   
               
             header('location: reset-code.php');
             
@@ -118,9 +119,9 @@ if(isset($_POST['signup'])){
     //if user click check reset otp button
     if(isset($_POST['check-reset-otp'])){
         $_SESSION['info'] = "";
-        $otp_code = mysqli_real_escape_string($con, $_POST['otp']);
+        $otp_code = mysqli_real_escape_string($conn, $_POST['otp']);
         $check_code = "SELECT * FROM usertable WHERE code = $otp_code";
-        $code_res = mysqli_query($con, $check_code);
+        $code_res = mysqli_query($conn, $check_code);
         if(mysqli_num_rows($code_res) > 0){
             $fetch_data = mysqli_fetch_assoc($code_res);
             $email = $fetch_data['email'];
@@ -137,8 +138,8 @@ if(isset($_POST['signup'])){
     //if user click change password button
     if(isset($_POST['change-password'])){
         $_SESSION['info'] = "";
-        $password = mysqli_real_escape_string($con, $_POST['password']);
-        $cpassword = mysqli_real_escape_string($con, $_POST['cpassword']);
+        $password = mysqli_real_escape_string($conn, $_POST['password']);
+        $cpassword = mysqli_real_escape_string($conn, $_POST['cpassword']);
         if($password !== $cpassword){
             $errors['password'] = "Confirm password not matched!";
         }else{
@@ -146,7 +147,7 @@ if(isset($_POST['signup'])){
             $email = $_SESSION['email']; //getting this email using session
             $encpass = password_hash($password, PASSWORD_BCRYPT);
             $update_pass = "UPDATE usertable SET code = $code, password = '$encpass' WHERE email = '$email'";
-            $run_query = mysqli_query($con, $update_pass);
+            $run_query = mysqli_query($conn, $update_pass);
             if($run_query){
                 $info = "Your password changed. Now you can login with your new password.";
                 $_SESSION['info'] = $info;

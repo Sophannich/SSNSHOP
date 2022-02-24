@@ -23,49 +23,19 @@ foreach ($result as $row){
                   <div class="col-md-auto bg-process">
 
                     <div class="form-row font-size-16 font-baloo mt-3">
-                      <div class="col">
-                      <form  method="POST" action="./backend/add-buy.php" >
 
-                                <input type="text"  name="txtuserid" value="<?php echo $fetch_info['user_id'] ?>" hidden>
-                                <input type="text"  name="txtproid" value="<?= $row['pro_id']; ?>" hidden>
-                                <input type="text"  name="txtqty" value="1" hidden data-id="<?= $row['pro_id']?? "N/A" ; ?>" class="qty_input border px-1 bg-light text-center">
-                                <input type="text"  name="txtname" value="<?= $row['pro_name']; ?>" hidden>              
-                                <input type="text"  name="txtphone" value="<?php echo $fetch_info['phone_number'] ?>" hidden>
+                    <div class="col">
+                    <a href="#addbuy<?=$row['pro_id'];?>" data-toggle="modal" class="btn btn-danger form-control">Buy</a>
 
-                                
-                                <?php 
-                                                
-
-                                                if ( $row['stock'] == "IN STOCK" and $row['total']>0) {
-                                                    echo '
-                                                    <button type="submit" class="btn btn-danger form-control">
-                                                      Buy 
-                                                    </button>
-                                                  ';
-                                                } else {
-                                                    
-                                                    echo '
-                                                    <button type="submit" class="btn btn-danger form-control" disabled>
-                                                      OUT STOCK
-                                                    </button>
-                                                    ';
-                                                };
-
-                                    ?>
-                          
-                          
-
-                          </form>
-                        
-                      </div>
+                    </div>
 
                       <div class="col">
 
                       <form method="POST" action="./backend/add-cart.php" >
 
                                 <input type="text"  name="txtuserid" value="<?php echo $fetch_info['user_id'] ?>" hidden>
-                                <input type="text"  name="txtproid" value="<?= $row['pro_id']; ?>" hidden>
-                                <input type="text"  name="txtproid" value="<?= $row['pro_id']; ?>" hidden>
+                                <input type="text"  name="txtproid" value="<?=$row['pro_id'];?>" hidden>
+                                <input type="text"  name="txtproid" value="<?=$row['pro_id'];?>" hidden>
                                 <input type="text"  name="txtqty" value="1" hidden data-id="<?= $row['pro_id']?? "N/A" ; ?>" class="qty_input border px-1 bg-light text-center">
                                 <input type="text"  name="txtname" value="<?= $row['pro_name']; ?>" hidden>
                               
@@ -412,7 +382,7 @@ foreach ($result as $row){
 
                                                               if ( $row['status'] == "New") {
                                                                   echo 'New';
-                                                              }elseif ( $row['status'] == "NEW") {
+                                                              }elseif ( $row['status'] == "Just Arrived") {
                                                                   
                                                                 echo 'New';
                                                             }elseif ( $row['status'] == "Second") {
@@ -455,6 +425,76 @@ foreach ($result as $row){
             </section>
             
         <!-- End Product -->     
+
+
+
+ <!-- Add Buy Modal HTML -->
+
+ <div id="addbuy<?=$row['pro_id'];?>" class="modal fade" >
+            <div class="modal-dialog">
+              <div class="modal-content">
+
+              <div class="menu-header">
+                  <a href="./index.php"><img src="./assets/logos/ssnshop.gif" class="m-2 " style="width: 100px;"></a>          
+                    <button type="button" class="close pr-2 pt-1" data-dismiss="modal"><i class="material-icons">close</i></button>    
+                </div>
+
+                <div class="w-50">
+                <img src=" <?= $row['img1']?>" alt="" class="img-brand ">
+                </div>
+                <div class="ml-3">
+                    <b>Phone : <a href="tel:<?=$row['phone']??0;?>"><?php echo $fetch_info['phone_number'] ?></a></b> <br><br>
+                    <b class="one-line"><?=$row['pro_name']?? "N/A";?></b>
+                    <b class="card-text"> Price : $<?=$row['price']?? "N/A";?></b><br>
+                    <b class="card-text"> Discount : <?=$row['discount']?? "N/A";?> %</b><br>
+                    <b class="card-text"> Amount : $<?=$row['total']?? "N/A";?></b><br>
+                    <br><br>
+                  </div>
+                <form  method="POST" action="./backend/add-buy.php" >
+
+                  <input hidden type="text"  name="txtuserid" value="<?php echo $fetch_info['user_id'] ?>" >
+                  <input hidden type="text"  name="txtproid" value="<?= $row['pro_id']; ?>" >
+                  <input hidden type="text"  name="txtqty" value="1"  data-id="<?= $row['pro_id']?? "N/A" ; ?>" class="qty_input border px-1 bg-light text-center">
+                  <input hidden type="text"  name="txtname" value="<?= $row['pro_name']; ?>" >  
+                  <input hidden type="text"  name="txtprice" value="<?= $row['total']??0;?>" >              
+                  <input hidden type="text"  name="txtphone" value="<?php echo $fetch_info['phone_number'] ?>" >
+
+
+                  <?php 
+                                  
+
+                                  if ( $row['stock'] == "IN STOCK" and $row['total']>0) {
+                                      echo '
+                                      <button type="submit" class="btn btn-danger form-control">
+                                        Buy 
+                                      </button>
+                                    ';
+                                  } else {
+                                      
+                                      echo '
+                                      <button type="submit" class="btn btn-danger form-control" disabled>
+                                        OUT STOCK
+                                      </button>
+                                      ';
+                                  };
+
+                      ?>
+
+
+
+                  </form>
+                <br class="m-1">
+              </div>
+            </div>
+          </div>
+        <!-- End Modal HTML -->
+
+
+
+
+
+
+
 
 
 

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 16, 2022 at 03:25 PM
+-- Generation Time: Feb 24, 2022 at 05:23 PM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.1.1
 
@@ -26,18 +26,37 @@ USE `ssnshop`;
 -- --------------------------------------------------------
 
 --
--- Table structure for table `admin_profile`
+-- Table structure for table `admintable`
 --
 
-CREATE TABLE `admin_profile` (
-  `admin_id` int(11) NOT NULL,
-  `username` varchar(225) NOT NULL,
-  `email` varchar(225) NOT NULL,
-  `password` varchar(225) NOT NULL,
-  `mobile_phone` varchar(225) NOT NULL,
-  `status` varchar(225) NOT NULL,
-  `created_at` datetime NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+CREATE TABLE `admintable` (
+  `id` int(11) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  `add_pro` varchar(10) NOT NULL,
+  `total_pro` varchar(20) NOT NULL,
+  `banner` varchar(20) NOT NULL,
+  `brand` varchar(20) NOT NULL,
+  `request` varchar(20) NOT NULL,
+  `cus_pro` varchar(20) NOT NULL,
+  `create_user` varchar(20) NOT NULL,
+  `position` varchar(20) NOT NULL,
+  `deletes` varchar(20) NOT NULL,
+  `updates` varchar(20) NOT NULL,
+  `adds` varchar(20) NOT NULL,
+  `reject` varchar(20) NOT NULL,
+  `complete` varchar(20) NOT NULL,
+  `confirm` varchar(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `admintable`
+--
+
+INSERT INTO `admintable` (`id`, `name`, `email`, `password`, `add_pro`, `total_pro`, `banner`, `brand`, `request`, `cus_pro`, `create_user`, `position`, `deletes`, `updates`, `adds`, `reject`, `complete`, `confirm`) VALUES
+(1, 'SOPHANNICH', 'sophannich@gmail.com', '$2y$10$RtOXBCCeipvr5KdYpBUN4OU.zvwUCMPHxPQxTwkTzYLPVDFUZnZ.W', '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
+(2, 'Admin', 'admin@gmail.com', '$2y$10$RtOXBCCeipvr5KdYpBUN4OU.zvwUCMPHxPQxTwkTzYLPVDFUZnZ.W', '', '', '', '', '', '', '', '', '', '', '', '', '', '');
 
 -- --------------------------------------------------------
 
@@ -57,7 +76,9 @@ CREATE TABLE `banner_area` (
 INSERT INTO `banner_area` (`banner_id`, `banner_img`) VALUES
 (1, 'https://i01.appmifile.com/webfile/globalimg/dongxuechun/redmi10banner.jpg\r\n'),
 (2, 'https://i01.appmifile.com/webfile/globalimg/0320/TO-B/New-Product-Banner/mi-11t-pro-banner.jpg'),
-(3, 'https://i01.appmifile.com/webfile/globalimg/dongxuechun/PC_Banner-c3j1.jpg');
+(3, 'https://i01.appmifile.com/webfile/globalimg/dongxuechun/PC_Banner-c3j1.jpg'),
+(4, 'https://baxcash.com/wp-content/uploads/2021/07/Mi-11i-banner-en-PC.jpg'),
+(6, ' https://www.emergenceinsurance.com.au/wp-content/uploads/2020/03/Cyber-lens-resized-1920x770.jpg');
 
 -- --------------------------------------------------------
 
@@ -78,12 +99,12 @@ CREATE TABLE `brand` (
 INSERT INTO `brand` (`brand_id`, `brand_logo`, `brand_name`) VALUES
 (1, 'https://th.bing.com/th/id/OIP.3it2aYi15bnxjE3n1pakWAHaHa?pid=ImgDet&rs=1', 'Apple'),
 (2, 'https://th.bing.com/th/id/OIP.jsNn-cz17xZ4GW8u0MKEwwHaBj?pid=ImgDet&rs=1', 'SAMSUNG'),
-(3, 'https://th.bing.com/th/id/OIP._Wn_O4_yx8ar7jRbl7Na-AHaDP?pid=ImgDet&rs=1', 'LG'),
 (4, 'https://th.bing.com/th/id/R.af44c1a9d4ec302d02fdf65559c0f3e6?rik=iYgJhWVynJc2aQ&riu=http%3a%2f%2fdwglogo.com%2fwp-content%2fuploads%2f2015%2f11%2fMSI-Gaming-Logo-Horizontal.png&ehk=BST4H4QgUqO%2brP0hYKQP1WH72XE591mFg1Sg%2fdLPBME%3d&risl=&pid=ImgRaw&r=0', 'MSI'),
 (5, 'https://th.bing.com/th/id/OIP.DOrzbAJGyr-xVNAelbY9OwHaCS?pid=ImgDet&rs=1', 'Realme'),
 (6, 'https://th.bing.com/th/id/OIP.yHrXLVmB1NbCTRwaxuOViAHaCl?pid=ImgDet&rs=1', 'VIVO'),
 (7, 'https://fmiagency.com/wp-content/uploads/2018/05/Huawei-Logo.png', 'Huawei'),
-(8, 'https://th.bing.com/th/id/OIP.8CtD9QWxdKZ_1aXCSu-HYAHaEK?pid=ImgDet&rs=1', 'Xiomi');
+(8, 'https://th.bing.com/th/id/OIP.8CtD9QWxdKZ_1aXCSu-HYAHaEK?pid=ImgDet&rs=1', 'Xiomi'),
+(10, ' https://snappytechs.com/wp-content/uploads/2018/07/250.png', 'LG');
 
 -- --------------------------------------------------------
 
@@ -101,20 +122,10 @@ CREATE TABLE `cart` (
   `date_order` datetime DEFAULT NULL,
   `date_completed` datetime DEFAULT NULL,
   `phone` varchar(255) NOT NULL,
-  `date_comfirmed` datetime DEFAULT NULL,
+  `date_confirmed` datetime DEFAULT NULL,
   `price_cart` float NOT NULL,
   `reason` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Dumping data for table `cart`
---
-
-INSERT INTO `cart` (`cart_id`, `user_id`, `pro_id`, `qty`, `cart_status`, `order_id`, `date_order`, `date_completed`, `phone`, `date_comfirmed`, `price_cart`, `reason`) VALUES
-(1, 1, 2, 1, 'Ordered', '2202045284', '2022-02-04 22:43:58', NULL, '010401191', NULL, 0, ''),
-(2, 1, 1, 1, 'Reject', '2202045444', '2022-02-04 22:44:04', NULL, '010401191', NULL, 0, 'Sorry This product is out stock. Can you order other item?'),
-(3, 1, 1, 1, 'Requested', '2202047734', '2022-02-04 22:51:10', NULL, '010401191', NULL, 0, ''),
-(4, 1, 1, 1, 'Requested', '2202046635', '2022-02-04 22:53:49', NULL, '010401191', NULL, 0, '');
 
 -- --------------------------------------------------------
 
@@ -163,10 +174,10 @@ CREATE TABLE `product` (
 --
 
 INSERT INTO `product` (`pro_id`, `pro_brand`, `pro_name`, `price`, `discount`, `total`, `date_in`, `stock`, `status`, `img1`, `img2`, `img3`, `img4`, `img5`, `img6`, `detail`, `pro_rate`, `category`, `gift`, `warranty`) VALUES
-(1, 'Apple', 'iPhone 13 Pro Max', 1500.00, 10, 1200.00, '2021-11-17 12:13:55', 'IN STOCK', 'NEW', 'https://gadgetworld254.co.ke/wp-content/uploads/2021/10/iphone-13-pro-max-blue-256gb-in-Kenya-866x1024.png', 'https://gadgetworld254.co.ke/wp-content/uploads/2021/10/iphone-13-pro-max-blue-256gb-in-Kenya-866x1024.png', 'https://gadgetworld254.co.ke/wp-content/uploads/2021/10/iphone-13-pro-max-blue-256gb-in-Kenya-866x1024.png', 'https://gadgetworld254.co.ke/wp-content/uploads/2021/10/iphone-13-pro-max-blue-256gb-in-Kenya-866x1024.png', 'https://gadgetworld254.co.ke/wp-content/uploads/2021/10/iphone-13-pro-max-blue-256gb-in-Kenya-866x1024.png', 'https://gadgetworld254.co.ke/wp-content/uploads/2021/10/iphone-13-pro-max-blue-256gb-in-Kenya-866x1024.png', 'iPhone 13 Pro Max Super Retina XDR display with ProMotion; 6.7‑inch (diagonal) all‑screen OLED display; 2778‑by‑1284-pixel resolution at 458 ppi; The iPhone 13 Pro Max display has rounded corners that follow a beautiful curved design, and these corners ar ទូរស័ព្ទ', 200, 'Phone', 'មានកាដូរថែមជូន ១០ មុខ', 'ធានារយៈពេល​ ១ ឆ្នាំ'),
-(2, 'SAMSUNG', 'Samsung Galaxy S21 Ultra', 1099.99, 10, 989.99, '2021-11-22 15:27:50', 'IN STOCK', 'New', 'https://cdn.mos.cms.futurecdn.net/aw3MDrGkdWyjvQ4EbGzmaW-970-80.jpg.webp', 'https://cdn.mos.cms.futurecdn.net/aw3MDrGkdWyjvQ4EbGzmaW-970-80.jpg.webp', 'https://cdn.mos.cms.futurecdn.net/aw3MDrGkdWyjvQ4EbGzmaW-970-80.jpg.webp', 'https://cdn.mos.cms.futurecdn.net/aw3MDrGkdWyjvQ4EbGzmaW-970-80.jpg.webp', 'https://cdn.mos.cms.futurecdn.net/aw3MDrGkdWyjvQ4EbGzmaW-970-80.jpg.webp', 'https://cdn.mos.cms.futurecdn.net/aw3MDrGkdWyjvQ4EbGzmaW-970-80.jpg.webp', 'The Samsung Galaxy S21 Ultra is Samsung’s top, premium flagship for 2021, and what a phone it is. For the first time Samsung has offered S Pen support on an S-range handset here, meaning that you can optionally get the Galaxy Note range’s best feature.', 400, 'Phone', '', ''),
-(3, 'LG', 'Samsung Galaxy S21 Ultra', 1099.99, 10, 989.99, '2021-11-22 15:27:50', 'OUT STOCK', 'Second', 'https://cdn.mos.cms.futurecdn.net/aw3MDrGkdWyjvQ4EbGzmaW-970-80.jpg.webp', 'https://cdn.mos.cms.futurecdn.net/aw3MDrGkdWyjvQ4EbGzmaW-970-80.jpg.webp', 'https://cdn.mos.cms.futurecdn.net/aw3MDrGkdWyjvQ4EbGzmaW-970-80.jpg.webp', 'https://cdn.mos.cms.futurecdn.net/aw3MDrGkdWyjvQ4EbGzmaW-970-80.jpg.webp', 'https://cdn.mos.cms.futurecdn.net/aw3MDrGkdWyjvQ4EbGzmaW-970-80.jpg.webp', 'https://cdn.mos.cms.futurecdn.net/aw3MDrGkdWyjvQ4EbGzmaW-970-80.jpg.webp', 'The Samsung Galaxy S21 Ultra is Samsung’s top, premium flagship for 2021, and what a phone it is. For the first time Samsung has offered S Pen support on an S-range handset here, meaning that you can optionally get the Galaxy Note range’s best feature.', 300, 'Phone', '', ''),
-(4, 'MSI', 'MSI GS76 Stealth 11UH-625CZ', 3900.00, 10, 3510.00, '2021-11-17 12:13:55', 'IN STOCK', 'New', 'https://img.msi-shop.sk/S/2021/05/103380-herny-notebook-msi.stealth-gs76-11uh-06.webp', 'https://img.msi-shop.sk/S/2021/05/103376-herny-notebook-msi.stealth-gs76-11uh-02.webp', 'https://img.msi-shop.sk/S/2021/05/103377-herny-notebook-msi.stealth-gs76-11uh-03.webp', 'https://img.msi-shop.sk/S/2021/05/103378-herny-notebook-msi.stealth-gs76-11uh-04.webp', 'https://img.msi-shop.sk/S/2021/05/103379-herny-notebook-msi.stealth-gs76-11uh-05.webp', 'https://img.msi-shop.sk/S/2021/05/103380-herny-notebook-msi.stealth-gs76-11uh-06.webp', 'Intel Core i9-11900H (2.50-4.90GHz) (BNCH-22334b) 17.3\" WQHD 2560x1440px Matt IPS 240Hz LED LCD 32GB DDR4 3200MHz M.2 PCIe SSD 2000GB nVidia GeForce RTX 3080 16GB GDDR6 WiFi / BT / USB 3.2 / USB 3.2 Type-C / Thunderbolt 4 / LAN / HDMI / without DVD Win10H', 100, 'Computer', '', '');
+(1, ' Apple', 'iPhone 13 Pro Max 128GB Sierra Blue', 2500.00, 5, 2375.00, '2022-02-24 00:00:00', 'IN STOCK', 'Just Arrived', 'https://maxi.az/upload/iblock/e43/e09hluqr26zvtblhb1qvucu8qq4y0qtj/telefon_iphone_13_pro_max_128gb_sierra_blue_detail.jpg', 'https://maxi.az/upload/iblock/a89/yc15dtjxs8lgq5y6m6yu3l7gzk08e4sj/30059070bb1.jpg', 'https://maxi.az/upload/iblock/e01/2bvlmptl4c1utjcfozdz0kqxmwkmqxnc/30059070bb2.jpg', 'https://maxi.az/upload/iblock/bf8/r9ydk8ynq4ihv53nlmm433f8c8zkx8jm/30059070bb3.jpg', 'https://maxi.az/upload/iblock/653/3tq090rbczqa6ewbq8nv4iwfgdo9fx18/30059070bb4.jpg', 'https://maxi.az/upload/iblock/e01/2bvlmptl4c1utjcfozdz0kqxmwkmqxnc/30059070bb2.jpg', '17 cm (6.7-inch) Super Retina XDR display with ProMotion for a faster, more responsive feel\r\nCinematic mode adds shallow depth of field and shifts focus automatically in your videos\r\nPro camera system with new 12MP Telephoto, Wide and Ultra Wide cameras; LiDAR Scanner; 6x optical zoom range; macro photography; Photographic Styles, ProRes video, Smart HDR 4, Night mode, Apple ProRAW, 4K Dolby Vision HDR recording\r\n12MP TrueDepth front camera with Night mode, 4K Dolby Vision HDR recording\r\nA15 Bionic chip for lightning-fast performance\r\nUp to 28 hours of video playback, the best battery life ever in an iPhone\r\nDurable design with Ceramic Shield', 250, 'Phone', 'ថែម ១០ មុខ', '១ ឆ្នាំ'),
+(2, ' Apple', 'iPhone 13 Pro Max', 2000.00, 3, 1940.00, '2022-02-24 00:00:00', 'IN STOCK', 'Just Arrived', 'https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/iphone-13-pro-max-silver-select?wid=470&hei=556&fmt=png-alpha&.v=1631652956000', 'https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/iphone-13-pro-max-silver-select?wid=470&hei=556&fmt=png-alpha&.v=1631652956000', 'https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/iphone-13-pro-max-silver-select?wid=470&hei=556&fmt=png-alpha&.v=1631652956000', 'https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/iphone-13-pro-max-silver-select?wid=470&hei=556&fmt=png-alpha&.v=1631652956000', 'https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/iphone-13-pro-max-silver-select?wid=470&hei=556&fmt=png-alpha&.v=1631652956000', 'https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/iphone-13-pro-max-silver-select?wid=470&hei=556&fmt=png-alpha&.v=1631652956000', '17 cm (6.7-inch) Super Retina XDR display with ProMotion for a faster, more responsive feel\r\nCinematic mode adds shallow depth of field and shifts focus automatically in your videos\r\nPro camera system with new 12MP Telephoto, Wide and Ultra Wide cameras; LiDAR Scanner; 6x optical zoom range; macro photography; Photographic Styles, ProRes video, Smart HDR 4, Night mode, Apple ProRAW, 4K Dolby Vision HDR recording\r\n12MP TrueDepth front camera with Night mode, 4K Dolby Vision HDR recording\r\nA15 Bionic chip for lightning-fast performance\r\nUp to 28 hours of video playback, the best battery life ever in an iPhone\r\nDurable design with Ceramic Shield', 200, 'Phone', 'ថែម ១០ មុខ', '១ ឆ្នាំ'),
+(3, ' Apple', 'iPhone 13 Pro Max', 2300.00, 4, 2208.00, '2022-02-24 00:00:00', 'IN STOCK', 'Just Arrived', 'https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/iphone-13-pro-max-gold-select?wid=470&hei=556&fmt=png-alpha&.v=1631652956000', 'https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/iphone-13-pro-max-gold-select?wid=470&hei=556&fmt=png-alpha&.v=1631652956000', 'https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/iphone-13-pro-max-gold-select?wid=470&hei=556&fmt=png-alpha&.v=1631652956000', 'https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/iphone-13-pro-max-gold-select?wid=470&hei=556&fmt=png-alpha&.v=1631652956000', 'https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/iphone-13-pro-max-gold-select?wid=470&hei=556&fmt=png-alpha&.v=1631652956000', 'https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/iphone-13-pro-max-gold-select?wid=470&hei=556&fmt=png-alpha&.v=1631652956000', '17 cm (6.7-inch) Super Retina XDR display with ProMotion for a faster, more responsive feel\r\nCinematic mode adds shallow depth of field and shifts focus automatically in your videos\r\nPro camera system with new 12MP Telephoto, Wide and Ultra Wide cameras; LiDAR Scanner; 6x optical zoom range; macro photography; Photographic Styles, ProRes video, Smart HDR 4, Night mode, Apple ProRAW, 4K Dolby Vision HDR recording\r\n12MP TrueDepth front camera with Night mode, 4K Dolby Vision HDR recording\r\nA15 Bionic chip for lightning-fast performance\r\nUp to 28 hours of video playback, the best battery life ever in an iPhone\r\nDurable design with Ceramic Shield', 200, 'Phone', '', '១ ឆ្នាំ'),
+(4, ' Apple', 'iPhone 13 Pro Max', 2400.00, 2, 2352.00, '2022-02-24 00:00:00', 'IN STOCK', 'Just Arrived', 'https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/iphone-13-pro-max-graphite-select?wid=470&hei=556&fmt=png-alpha&.v=1631652956000', 'https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/iphone-13-pro-max-graphite-select?wid=470&hei=556&fmt=png-alpha&.v=1631652956000', 'https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/iphone-13-pro-max-graphite-select?wid=470&hei=556&fmt=png-alpha&.v=1631652956000', 'https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/iphone-13-pro-max-graphite-select?wid=470&hei=556&fmt=png-alpha&.v=1631652956000', 'https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/iphone-13-pro-max-graphite-select?wid=470&hei=556&fmt=png-alpha&.v=1631652956000', 'https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/iphone-13-pro-max-graphite-select?wid=470&hei=556&fmt=png-alpha&.v=1631652956000', '17 cm (6.7-inch) Super Retina XDR display with ProMotion for a faster, more responsive feel\r\nCinematic mode adds shallow depth of field and shifts focus automatically in your videos\r\nPro camera system with new 12MP Telephoto, Wide and Ultra Wide cameras; LiDAR Scanner; 6x optical zoom range; macro photography; Photographic Styles, ProRes video, Smart HDR 4, Night mode, Apple ProRAW, 4K Dolby Vision HDR recording\r\n12MP TrueDepth front camera with Night mode, 4K Dolby Vision HDR recording\r\nA15 Bionic chip for lightning-fast performance\r\nUp to 28 hours of video playback, the best battery life ever in an iPhone\r\nDurable design with Ceramic Shield', 240, 'Phone', 'ថែម ១០ មុខ', '១ ឆ្នាំ');
 
 -- --------------------------------------------------------
 
@@ -191,17 +202,20 @@ CREATE TABLE `usertable` (
 --
 
 INSERT INTO `usertable` (`user_id`, `name`, `email`, `password`, `code`, `status`, `address`, `phone_number`, `gender`) VALUES
-(1, 'Sophannich', 'sophannichnhoel1@gmail.com', '$2y$10$TAFink31hl7UdfJXWP9/GuPhfDxlyi3LPx0fGGZsl5TGJw/TYTLsG', 0, 'verified', 'Phnom Penh', '010401191', 'Male');
+(1, 'Sophannich', 'sophannichnhoel1@gmail.com', '$2y$10$TAFink31hl7UdfJXWP9/GuPhfDxlyi3LPx0fGGZsl5TGJw/TYTLsG', 0, 'verified', 'Phnom Penh', '010401191', 'Male'),
+(2, 'SNP', 'spn@gmail.com', '$2y$10$BsdNoT9SJbEDSRmIXHNjoOtRuW8bFNvyVr7E8DCOxKzmLHkuDYzVi', 0, 'verified', 'Phnom Penh', '012345678', 'Male'),
+(3, 'SSN', 'ssn@gmail.com', '$2y$10$G2n/vNNyDd4j8dElQBdGPetGhilc0EpeKIKVnjkM/dgxDg.YcLOpO', 0, 'verified', 'Phnom Penh', '024133452', 'Male'),
+(4, 'TEST', 'TEST@gmail.com', '$2y$10$3UHO46whLDBtiRLWj/lGwOXN7C4gyaHQVyriroDyzQky4Dhh7H7ku', 0, 'verified', 'Phnom Penh', '09876543', 'Male');
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `admin_profile`
+-- Indexes for table `admintable`
 --
-ALTER TABLE `admin_profile`
-  ADD PRIMARY KEY (`admin_id`);
+ALTER TABLE `admintable`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `banner_area`
@@ -244,34 +258,34 @@ ALTER TABLE `usertable`
 --
 
 --
--- AUTO_INCREMENT for table `admin_profile`
+-- AUTO_INCREMENT for table `admintable`
 --
-ALTER TABLE `admin_profile`
-  MODIFY `admin_id` int(11) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `admintable`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `banner_area`
 --
 ALTER TABLE `banner_area`
-  MODIFY `banner_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `banner_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `brand`
 --
 ALTER TABLE `brand`
-  MODIFY `brand_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `brand_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `cart`
 --
 ALTER TABLE `cart`
-  MODIFY `cart_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `cart_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `favorite`
 --
 ALTER TABLE `favorite`
-  MODIFY `favorite_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `favorite_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `product`
@@ -283,7 +297,7 @@ ALTER TABLE `product`
 -- AUTO_INCREMENT for table `usertable`
 --
 ALTER TABLE `usertable`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

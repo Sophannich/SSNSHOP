@@ -723,6 +723,13 @@ a {
   overflow: hidden;
 }
 
+.two-line {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+
 .col-xl-3 .h5 {
   color: #003859;
 }
@@ -845,6 +852,12 @@ a {
   background: #DC3545;
   color: white;
   width: 100px;
+}
+
+.btn-add-banner {
+  background: #3498DB;
+  color: white;
+  width: 250px;
 }
 
 /*# sourceMappingURL=style.css.map */

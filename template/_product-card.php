@@ -9,7 +9,7 @@
 
                         <?php
 
-                            if ( $row['status'] == "NEW") {
+                            if ( $row['status'] == "Just Arrived") {
                                 echo '<img src="https://th.bing.com/th/id/R.8818bd62c9305c4a3beeaa747307d5a6?rik=rod9HGqUSFst6w&riu=http%3a%2f%2fgifimage.net%2fwp-content%2fuploads%2f2017%2f09%2fblinking-new-gif-9.gif&ehk=FtaTD5Z%2fH1i23m9nx0rFkmZ6N%2b0FcRNHWIYvwnWe9pU%3d&risl=&pid=ImgRaw&r=0" class="img-new">';
 
                             } elseif ( $row['status'] == "New") {

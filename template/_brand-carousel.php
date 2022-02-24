@@ -1,7 +1,7 @@
 <?php 
 	
 	//Require brand-carousel-top Class
-		require('./backend/brand-carousel-top.php');
+		// require('./backend/brand-carousel-top.php');
 
 
  ?>

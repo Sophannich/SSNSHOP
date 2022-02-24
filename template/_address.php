@@ -13,7 +13,7 @@
               <br>
               <label for="validationCustom01">User ID</label>
               <input  name="txtuserid" type="text" class="form-control"  placeholder="User ID" id="validationCustom01" value="<?php echo $fetch_info['user_id'] ?>" hidden>
-              <input type="text" class="form-control"  placeholder="User ID" id="validationCustom01" value="<?php echo $fetch_info['user_id'] ?>" disabled>
+              <input type="text" class="form-control w-50"  placeholder="User ID" id="validationCustom01" value="<?php echo $fetch_info['user_id'] ?>" disabled>
               <br>
               <label for="validationCustom01">Username</label>
               <input name="txtusername" type="text" class="form-control"  placeholder="Username" id="validationCustom01" value="<?php echo $fetch_info['name'] ?>">
@@ -30,10 +30,16 @@
               <input name="txtaddress" type="text" class="form-control"  placeholder="Your Address" id="validationCustom02" value="<?php echo $fetch_info['address'] ?>">
               <br>
               <label for="validationCustom03">Phone Number</label>
-              <input name="txtnumber" type="text" class="form-control"  placeholder="Your phone numner" id="validationCustom03" value="<?php echo $fetch_info['phone_number'] ?>">
+              <input name="txtnumber" type="text" class="form-control"  placeholder="Your phone numner" value="<?php echo $fetch_info['phone_number'] ?>">
+              
+              <label for="validationCustom03" class="mt-3">Password</label>
+                <input name="txt_new_password" type="password" class="form-control"  placeholder="Password">
+
+                <label for="validationCustom03" class="mt-3">Re-Password</label>
+                <input name="txt_renew_password" type="password" class="form-control"  placeholder="Password" ><br>
 
 
-                                    
+              <br>
                                         <div class="modal-footer">
                                             <button type="button" class="btn btn-default" data-dismiss="modal">
                                                 <span class="glyphicon glyphicon-remove"></span> Cancel

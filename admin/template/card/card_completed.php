@@ -2,24 +2,37 @@
                                     <div class="border-left-completed shadow  py-2">
                                         <div class="row align-items-center">
                                             <div class="col-3 ">
-                                                <img src="https://gadgetworld254.co.ke/wp-content/uploads/2021/10/iphone-13-pro-max-blue-256gb-in-Kenya-866x1024.png" alt="" class="img-brand">
-                                                
+                                                <?php                                               
+
+                                                    if ( $row['img1']>0) {
+                                                        echo '
+                                                        <img src=" '.$row['img1']. ' " alt="" class="img-brand">
+                                                    ';
+                                                    } else {
+                                                        
+                                                        echo '
+                                                        <img src="https://image.mfa.go.th/mfa/r_0x740/mkKfL2iULZ/migrate_directory/media-center-20130323-155715.jpg " alt="" class="img-brand">
+                                                        ';
+                                                    }
+
+                                                ?>
+
                                             </div>
                                             <div class="col-5 ">
-                                            <small>Order  ID : 001</small><br>
-                                            <small>User ID : 001</small> <br>
-                                            <small>Order: 01/02/2022 6:00 PM</small><br>
-                                            <small>Confirmed : 01/02/2022 6:00 PM</small><br>
-                                            <small>Completed : 01/02/2022 10:00 AM</small><br>
+                                            <small>Order  ID : <?=$row['order_id']?? "N/A";?></small><br>
+                                            <small>User ID : <?=$row['user_id']?? "N/A";?></small> <br>
+                                            <small>Order: <?=$row['date_order']?? "N/A";?></small><br>
+                                            <small>Confirmed : <?=$row['date_confirmed']?? "N/A";?></small><br>
+                                            <small>Completed : <?=$row['date_completed']?? "N/A";?></small><br>
                                             
                                             </div>
 
                                             <div class="col">
                                                 
                                             
-                                            <small>Price : $500</small><br>
-                                            <small>iPhone 13 Pro Max</small><br>
-                                            <small>Phone : 010 40 11 91</small> <br><br>
+                                            <small>Price : $<?=$row['price_cart']?? "N/A";?></small><br>
+                                            <small class="one-line"><?=$row['pro_name']?? "N/A";?></small>
+                                            <small>Phone : <a href="tel:<?=$row['phone']??0;?>"><?=$row['phone']?? "N/A";?></a></small> <br><br>
                                             <button type="button" class="btn btn-sm " style="color: #17A2B8; font-weight: bold;" disabled>Completed</button>
                                             </div>
                                         </div>

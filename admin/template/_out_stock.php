@@ -3,7 +3,7 @@
                     <br>
                     <div class="mb-4">
                             <br>
-                            <h5 style="color: #5D6D7E;">Out Stock</h5>
+                            <h5 style="color: #5D6D7E;">Out Stock (<?= $count_pro_out?>)</h5>
                             <hr>
                     </div>
 
@@ -14,7 +14,7 @@
                     <?php 
                       foreach ($pro_out_stock as $row){
 
-                        include('../admin/template/card/card_product.php');
+                      include('../admin/template/_product.php');
 
                       }
                     ?>
