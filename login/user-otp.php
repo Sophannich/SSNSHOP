@@ -20,7 +20,7 @@ if($email == false){
                 <form action="user-otp.php" method="POST" autocomplete="off">
                     <h2 class="text-center">Code Verification</h2>
                     <?php 
-                                    $codes=$con->query("SELECT code FROM usertable WHERE email = '$email' ");
+                                    $codes=$conn->query("SELECT code FROM usertable WHERE email = '$email' ");
 
                                     foreach ($codes as $row){
 
