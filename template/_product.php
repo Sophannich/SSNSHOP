@@ -1,9 +1,4 @@
 
-    <?php
-require('./backend/product.php');
-
-
-?>
 
     <!-- Start Products -->
     <section id="product" >
@@ -12,7 +7,7 @@ require('./backend/product.php');
 
 
 
-       <?php foreach ($result as $row){
+       <?php foreach ($resultproduct as $row){
 
 
 /* include  _ptoduct.php */

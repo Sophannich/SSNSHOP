@@ -1,12 +1,8 @@
 <?php 
 //Require brand-carousel-top Class
-require('./backend/product.php');
+require('../backend/product.php');
 
   ?>      
-        
-           
-
-
 
 <?php 
 $pro_id=$_GET['pro_id'] ?? "#";
@@ -25,8 +21,7 @@ foreach ($resultproduct as $row){
                     <div class="form-row font-size-16 font-baloo mt-3">
 
                     <div class="col">
-                    <a href="#addbuy<?=$row['pro_id'];?>" data-toggle="modal" class="btn btn-danger form-control">Buy</a>
-
+                    <a href="../login/login-user.php" class="btn btn-danger form-control">Buy</a>
                     </div>
 
                       <div class="col">
@@ -44,7 +39,7 @@ foreach ($resultproduct as $row){
 
                                                 if ( $row['stock'] == "IN STOCK" and $row['total']>0) {
                                                     echo '
-                                                    <button type="submit" class="btn btn-warning form-control">Add to Cart</button>
+                                                    <a href="../login/login-user.php" class="btn btn-warning form-control">Add to Cart</a>
                                                   ';
                                                 } else {
                                                     
@@ -202,24 +197,8 @@ foreach ($resultproduct as $row){
 
                             <!-- <div class="col-3 btn-favorite text-right"><i class="material-icons color-item">favorite_border</i></div>     -->
                             
-                            <form method="POST" action="./backend/add-fa.php" >
-
-                                <input type="text"  name="txtuserid" value="<?php echo $fetch_info['user_id'] ?>" hidden>
-                                <input type="text"  name="txtproid" value="<?= $row['pro_id']; ?>" hidden>
-                                
-                                <input type="text"  name="txtname" value="<?= $row['pro_name']; ?>" hidden>
-
-
-
-                                  <button class="border-0" style="background: transparent;">
-                                      <div class="col-3 btn-favorite text-right"><i class="material-icons color-item">favorite_border</i></div>                            
-                                  </button>
- 
-                            </form>
-
-                            
-
-
+                            <a href="../login/login-user.php" class="col-3 btn-favorite text-right"><i class="material-icons color-item">favorite_border</i></a>
+  
                           </div>
 
                             <?php 

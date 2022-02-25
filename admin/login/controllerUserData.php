@@ -1,8 +1,6 @@
 <?php 
 session_start();
-// require "connection.php";
-
-include('../../backend/DBController.php');
+require "connection.php";
 $email = "";
 $name = "";
 $errors = array();

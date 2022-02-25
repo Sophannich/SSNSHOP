@@ -32,7 +32,8 @@
 	
 	//Require MySQL Connection
 		require('./backend/DBController.php');
- 
+        require('./backend/brand-carousel-top.php');
+         require('./backend/product.php');
 
  ?>
 

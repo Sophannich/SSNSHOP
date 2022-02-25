@@ -1,77 +1,25 @@
-
+<?php 
+require './backend/DBController.php';
+require_once "./login/controllerUserData.php"; ?>
 
 
 <?php 
-    ob_start();
-    //Include header.php file
-    include("header.php");
-    include("./template/_header.php");
+$email = $_SESSION['email'];
+$password = $_SESSION['password'];
 
-     
- ?>
+if($email != false && $password != false){
+    $sql = "SELECT * FROM usertable WHERE email = '$email'";
+    $run_Sql = mysqli_query($conn, $sql);
+    if($run_Sql){
+        $fetch_info = mysqli_fetch_assoc($run_Sql);
 
-
-<?php 
+        header('Location: ./for_user.php');
         
-        
-    
-    /* include brand-carousel-top */ 
-        include("./template/_branner-carousel-top.php");
-    /* !include brand-carousel-top*/ 
-
-    $sayhi=greeting();
-    echo '
-
-         <h class="m-3 font-siemreap" style="font-size: 16px;">'. $sayhi.'  <h style="font-size: 20px; color: #00A5C4;;">  '. $fetch_info['name'] .'</h></h>
-
-         <br>
-        <br>
-    ';
-
-
-    /* include  brand-carousel */ 
-        include("./template/_brand-carousel.php");
-    /* !include brand-carousel */ 
-
-      /* include  _ptoduct.php */ 
-      include("./template/_product.php");
-      /* !include _ptoduct.php */ 
-
-
-
-
-
-    
- ?>
-
-<?php
-
-function greeting(){
-    date_default_timezone_set('Asia/Bangkok');
-    $timeOfDay = date('a');
-    if($timeOfDay == 'am'){
-        return '<i class="material-icons color-item" style="font-size: 25px;" >light_mode</i> Good Morning';
-    }elseif($timeOfDay == 'pm'){
-        return '<i class="material-icons color-item" style="font-size: 25px;" >brightness_5</i> Good Afternoon ';
-    }else{
-
     }
-
+}else{
+   
+    header('Location: ./no_user/index.php');
 }
 
+
 ?>
-
-
-
-
-<!-- <div style="height: 2000px;">
-
-</div> -->
-
-
-<?php 
-    
-    //Include footer.php file
-    include("footer.php");
-
- ?>

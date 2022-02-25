@@ -181,11 +181,11 @@
 
 <?php
     if ($row['favorite_status'] ?? "0" == "1") {
-        include('./template/btnfa.php');
+        include('../template/btnfa.php');
         
     } else {
     
-         include('./template/btnfa-bor.php');
+         include('../template/btnfa-bor.php');
     };
 ?>
 
@@ -193,7 +193,7 @@
                                                 
 
                                                 if ( $row['stock'] == "IN STOCK" and $row['total']>0) {
-                                                    include('./template/btncart.php');
+                                                    include('../template/btncart.php');
                                                 } else {
                                                     
                                                     echo '

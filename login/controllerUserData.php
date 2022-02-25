@@ -1,7 +1,7 @@
 <?php 
 session_start();
-// require "connection.php";
-include('./../backend/DBController.php');
+require "connection.php";
+
 $email = "";
 $name = "";
 $address="";
@@ -85,7 +85,7 @@ if(isset($_POST['signup'])){
                 if($status == 'verified'){
                   $_SESSION['email'] = $email;
                   $_SESSION['password'] = $password;
-                    header('location: ../index.php');
+                    header('location: ../../for_user.php');
                 }else{
                     $info = "It's look like you haven't still verify your email - $email";
                     $_SESSION['info'] = $info;

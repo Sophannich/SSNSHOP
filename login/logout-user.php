@@ -2,5 +2,8 @@
 session_start();
 session_unset();
 session_destroy();
-header('location: login-user.php');
+// header('location: login-user.php');
+
+header('location: ../no_user/index.php');
+
 ?>

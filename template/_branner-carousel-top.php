@@ -1,19 +1,11 @@
-<?php 
-	
-	//Require brand-carousel-top Class
-		require('./backend/brand-carousel-top.php');
 
-
- ?>
-    
-       
        <!-- Start Carousel Top -->
         <div id="carouselExampleCaptions" class="carousel slide " data-ride="carousel" style="margin-top: -5px; position: relative;">
                     <ol class="carousel-indicators">
                                 <?php
 
                                 $i=0;
-                                foreach ($result as $row){
+                                foreach ($resultbanner as $row){
                                     $actives=' ';
 
                                     if ($i == 0){
@@ -36,7 +28,7 @@
                                     $i=0;
 
 
-                                    foreach ($result as $row){
+                                    foreach ($resultbanner as $row){
                                         $actives=' ';
 
                                         if ($i == 0){

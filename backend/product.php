@@ -1,8 +1,8 @@
 <?php
 
-$result=$conn->query("SELECT * FROM `product` ORDER BY Rand()");
+$resultproduct=$conn->query("SELECT * FROM `product` ORDER BY Rand()");
 $resultsearch=$conn->query("SELECT * FROM `product` ORDER BY Rand()");
-$resultbrand=$conn->query("SELECT DISTINCT pro_brand FROM `product` ORDER BY Rand()");
+// $resultbrand=$conn->query("SELECT DISTINCT pro_brand FROM `product` ORDER BY Rand()");
 $resultcategory=$conn->query("SELECT DISTINCT category FROM `product` ORDER BY Rand()");
 
 
