@@ -36,6 +36,7 @@ if(isset($_POST['signup'])){
             $message = "Your verification code is $code";
         
             header('location: user-otp.php');
+            
                 exit();
         }else{
             $errors['db-error'] = "Failed while inserting data into database!";
@@ -85,7 +86,7 @@ if(isset($_POST['signup'])){
                 if($status == 'verified'){
                   $_SESSION['email'] = $email;
                   $_SESSION['password'] = $password;
-                    header('location: ../../for_user.php');
+                    header('location: ../for_user.php');
                 }else{
                     $info = "It's look like you haven't still verify your email - $email";
                     $_SESSION['info'] = $info;

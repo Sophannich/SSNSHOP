@@ -101,7 +101,7 @@
               <td><a href="./index.php"><img src="../assets/logos/ssnshop.gif" class="logo"></a> </td>
 
               <td class="text-right py-2"  style="width: 400px;">
-              <div style="font-size: 16px; margin-top: 5px;"> <a href="../login//login-user.php" >Sing Up / Login</a></div>
+              <div style="font-size: 16px; margin-top: 5px;"> <a href="../login/login-user.php" >Sing Up / Login</a></div>
               </td>
 
               

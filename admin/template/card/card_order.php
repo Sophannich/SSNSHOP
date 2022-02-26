@@ -23,7 +23,7 @@
                                             <small>Order:  <?=$row['date_order']?? "N/A";?></small><br>
 
                                             <div class="text-right ">
-                                            <a href="#reason<?=$row['order_id']?? "N/A";?>" data-toggle="modal" ><br>
+                                            <a href="#reason<?=$row['cart_id']?? "N/A";?>" data-toggle="modal" ><br>
                                             <button type="button" class="btn btn-cancel  btn-sm " <?php echo $fetch_info['reject'] ?>>Reject</button>
                                             </a>
                                             </div>
@@ -36,7 +36,7 @@
                                             <small>Price : $<?=$row['price_cart']?? "N/A";?></small><br>
                                             <small class="one-line"><?=$row['pro_name']?? "N/A";?></small>
                                             <small>Phone : <a href="tel:<?=$row['phone']??0;?>"><?=$row['phone']?? "N/A";?></a></small> <br>
-                                            <a href="#confirm<?=$row['order_id']?? "N/A";?>" data-toggle="modal" ><br>
+                                            <a href="#confirm<?=$row['cart_id']?? "N/A";?>" data-toggle="modal" ><br>
                                             <button type="button" class="btn btn-comfirm  btn-sm mt-1" <?php echo $fetch_info['confirm'] ?>>Confirm</button>
                                             </a>
                         
@@ -50,7 +50,7 @@
         
 
         <!-- Reject Reason product -->
-        <div id="reason<?=$row['order_id']?? "N/A";?>" class="modal fade">
+        <div id="reason<?=$row['cart_id']?? "N/A";?>" class="modal fade">
             <div class="modal-dialog">
               <div class="modal-content">
                 
@@ -90,7 +90,7 @@
 
                 <form method="POST" action="./../admin/backend/reject_pro.php">
                     <h5 class="card-title">Reason</h5>
-                    <input type="text" value="<?=$row['order_id']?>"  name="txt_order_id" hidden>
+                    <input type="text" value="<?=$row['cart_id']?>"  name="txt_cart_id" hidden>
                     <textarea class="form-control" name="txt_reason" rows="3"></textarea><br>
 
                     
@@ -114,7 +114,7 @@
         <!-- End Modal HTML -->
 
         <!-- Confirm product -->
-                <div id="confirm<?=$row['order_id']?? "N/A";?>" class="modal fade">
+                <div id="confirm<?=$row['cart_id']?? "N/A";?>" class="modal fade">
             <div class="modal-dialog">
               <div class="modal-content">
                 
@@ -165,7 +165,7 @@
 
             <br>   <br> 
             <form method="POST" action="./../admin/backend/confirm_pro.php">
-                <input type="text" value="<?=$row['order_id']?>" name="txt_order_id" hidden>
+                <input type="text" value="<?=$row['cart_id']?>" name="txt_cart_id" hidden>
                 <div class="card-body text-right">
                   <button class="btn btn-primary">Confirm</button>
                 </div>

@@ -31,7 +31,7 @@
                                             <small class="one-line"><?=$row['pro_name']?? "N/A";?></small>
                                             <small>Phone : <a href="tel:<?=$row['phone']??0;?>"><?=$row['phone']?? "N/A";?></a></small> <br><br>
                                             
-                                            <a href="#completed<?=$row['order_id']?? "N/A";?>" data-toggle="modal">
+                                            <a href="#completed<?=$row['cart_id']?? "N/A";?>" data-toggle="modal">
                                             <button type="button" class="btn btn-complete  btn-sm" <?php echo $fetch_info['complete'] ?>>Complete</button>
                                             </a>
                         
@@ -42,7 +42,7 @@
 
 
      <!-- Completed product -->
-         <div id="completed<?=$row['order_id']?? "N/A";?>" class="modal fade">
+         <div id="completed<?=$row['cart_id']?? "N/A";?>" class="modal fade">
             <div class="modal-dialog">
               <div class="modal-content">
                 
@@ -93,7 +93,7 @@
 
             <br>   <br> 
             <form method="POST" action="./../admin/backend/complete_pro.php">
-                <input type="text" value="<?=$row['order_id']?>" name="txt_order_id" hidden>
+                <input type="text" value="<?=$row['cart_id']?>" name="txt_cart_id" hidden>
                 <div class="card-body text-right">
                   <button class="btn btn-primary">Complete</button>
                 </div>

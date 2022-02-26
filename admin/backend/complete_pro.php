@@ -1,7 +1,7 @@
 <?php
 include('../../backend/DBController.php');
 session_start();
-$order_id=$_POST['txt_order_id'];
+$cart_id=$_POST['txt_cart_id'];
 $cart_status="Completed";
 $reason=$_POST['txt_reason'];
 
@@ -14,7 +14,7 @@ $conn->query(" UPDATE `cart` SET
     `reason`='$reason',
     `date_completed`='$date_completed'
 
-WHERE `cart`.`order_id` = '$order_id' ");
+WHERE `cart`.`cart_id` = '$cart_id' ");
 
 header('Location: '.$_SERVER['HTTP_REFERER']);
 
