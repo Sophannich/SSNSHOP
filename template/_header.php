@@ -23,10 +23,13 @@ include("template/_address.php");
                 <div class=" d-flex" >
                   
                   <a href="#addEmployeeModal" data-toggle="modal"><i class="material-icons color-item" id="#addEmployeeModal" style="font-size: 26px; cursor: pointer;" >menu</i></a>
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  <a href="./index.php"><img src="./assets/logos/ssnshop.gif" class="logo"></a>
+                
                 </div>
 
               </td>
-              <td><a href="./index.php"><img src="./assets/logos/ssnshop.gif" class="logo"></a> </td>
+              <!-- <td><a href="./index.php"><img src="./assets/logos/ssnshop.gif" class="logo"></a> </td> -->
 
               <td class="text-right py-2"  style="width: 400px;">
 
