@@ -35,7 +35,17 @@
 <?php
     include('./template/_brand_show.php');
 ?>
-
+<div class="col-12">
+    <a href="./search-product.php?pro_detail=Just Arrived">
+        <button type="button" class="btn btn-pro border">Just arrived</button>
+    </a>
+    <a href="./search-product.php?pro_detail=New">
+        <button type="button" class="btn btn-pro border">New</button>
+    </a>
+    <a href="./search-product.php?pro_detail=Second">
+        <button type="button" class="btn btn-pro border ">Second had</button>
+    </a>
+</div>
 
   <?php    /* include  _ptoduct.php */ 
       include("./template/_product.php");

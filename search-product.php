@@ -26,8 +26,8 @@ include("./template/_header-search.php");
                 if (isset($_GET['pro_detail'])) {
                     // code...
                     $search=$_GET['pro_detail'];
-                    $stmt=$conn->prepare("SELECT * FROM `product`  WHERE pro_brand LIKE CONCAT('%',?,'%') OR detail LIKE CONCAT('%',?,'%') OR category LIKE CONCAT('%',?,'%') ");
-                    $stmt->bind_param("sss",$search,$search,$search);
+                    $stmt=$conn->prepare("SELECT * FROM `product`  WHERE pro_brand LIKE CONCAT('%',?,'%') OR detail LIKE CONCAT('%',?,'%') OR category LIKE CONCAT('%',?,'%') OR status LIKE CONCAT('%',?,'%') ");
+                    $stmt->bind_param("ssss",$search,$search,$search,$search);
                 }else{
                     $stmt=$conn->prepare("SELECT * FROM `product` ");
 

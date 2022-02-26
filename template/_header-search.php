@@ -74,7 +74,7 @@
         <section id="category" >
           <div id="search_brand" class="owl-carousel container">
 
-          <?php foreach ($resultbrand as $row){ ?>
+          <?php foreach ($resultbrandsearch as $row){ ?>
 
 
             <div>
