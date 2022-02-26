@@ -29,11 +29,15 @@
     ';
 
 
-    /* include  brand-carousel */ 
-        include("./template/_brand-carousel.php");
-    /* !include brand-carousel */ 
+?>
 
-      /* include  _ptoduct.php */ 
+<p class="border-bottom font-siemreap mr-3 ml-3" style="font-size: 20px;">Brands &nbsp;<i class="fa fa-tags" aria-hidden="true"></i></p>
+<?php
+    include('./template/_brand_show.php');
+?>
+
+
+  <?php    /* include  _ptoduct.php */ 
       include("./template/_product.php");
       /* !include _ptoduct.php */ 
 
@@ -60,14 +64,17 @@ function greeting(){
 }
 
 ?>
+        <div style="height: 50px;">
+        </div>
 
 
+<?php    
+    include('./template/_brand-carousel.php');
+ ?>
 
 
-<!-- <div style="height: 2000px;">
-
-</div> -->
-
+        <div style="height: 50px;">
+        </div>
 
 <?php 
     
