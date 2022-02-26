@@ -56,9 +56,18 @@
         $row = mysqli_fetch_array($result_all_pro_completed);
         $count_all_pro_completed = $row['count'];
 
-// Count All Completed
+// Count All user 
         $result_user_all= mysqli_query($conn, "SELECT COUNT(id) AS `count` FROM admintable ");
         $row = mysqli_fetch_array($result_user_all);
         $count_user_all = $row['count'];
-        
+
+// Count All Banner
+        $result_all_banner= mysqli_query($conn, "SELECT COUNT(banner_id) AS `count` FROM banner_area ");
+        $row = mysqli_fetch_array($result_all_banner);
+        $count_all_banner = $row['count'];
+
+// Count All Brand
+        $result_all_brand= mysqli_query($conn, "SELECT COUNT(brand_id) AS `count` FROM brand ");
+        $row = mysqli_fetch_array($result_all_brand);
+        $count_all_brand = $row['count'];
 ?>

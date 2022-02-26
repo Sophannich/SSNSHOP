@@ -320,7 +320,7 @@ include('../admin/template/_header.php');
                                                 <div class="col mr-2">
                                                     <div class=" font-weight-bold  text-uppercase mb-1">
                                                     Banner</div>
-                                                    <div class="h5 mb-0 font-weight-bold "><?= $count_pro_second?></div>
+                                                    <div class="h5 mb-0 font-weight-bold "><?= $count_all_banner?></div>
                                                 </div>
                                                 <div class="col-auto">     
                                                     <i class="material-icons" >collections</i>
@@ -339,7 +339,7 @@ include('../admin/template/_header.php');
                                                 <div class="col mr-2">
                                                     <div class=" font-weight-bold  text-uppercase mb-1">
                                                     Brand</div>
-                                                    <div class="h5 mb-0 font-weight-bold "><?= $count_pro_second?></div>
+                                                    <div class="h5 mb-0 font-weight-bold "><?= $count_all_brand?></div>
                                                 </div>
                                                 <div class="col-auto">     
                                                     <i class="material-icons" >add_photo_alternate</i>
