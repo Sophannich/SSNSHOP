@@ -96,7 +96,11 @@
           </h6>
           <p>
             <a href="https://sadi.edu.kh/" class=" font-moul text-black-50"><i class="fas fa-school me-3​"></i> វិទ្យាស្ថាន អភិវឌ្ឈន៍អាស៊ីសច្ចៈ</a>
+                <div class="font-rale box-brand" style="background: transparent;">                                               
+                    <a href="https://sadi.edu.kh/"><img src="http://sadi.edu.kh/wp-content/uploads/2019/03/SADI_LOGO.png" alt="Product1" class="img-fluid img-brand "></a>
+                </div>
           </p>
+          <img src="" alt="">
 
         </div>
         <!-- Grid column -->
@@ -109,7 +113,7 @@
   <!-- Copyright -->
   <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
     © 2021 Copyright :
-    <a class="text-reset fw-bold" href="https://sadi.edu.kh/"> វិទ្យាស្ថាន អភិវឌ្ឈន៍អាស៊ីសច្ចៈ</a>
+    <a class="text-reset fw-bold" href=""> SSN ELECTRONIC SHOP</a>
   </div>
   <!-- Copyright -->
 </footer>
