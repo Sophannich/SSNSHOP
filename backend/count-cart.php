@@ -6,7 +6,7 @@
         $row = mysqli_fetch_array($result_cart);
         $count_cart = $row['count'];
 
-        $result_order = mysqli_query($conn, "SELECT COUNT(qty) AS `count_order` FROM cart WHERE cart_status='Requested' AND user_id = '$userid' ");
+        $result_order = mysqli_query($conn, "SELECT COUNT(qty) AS `count_order` FROM cart WHERE cart_status='Requested' OR cart_status='Confirmed'  AND user_id = '$userid' ");
         $row = mysqli_fetch_array($result_order);
         $count_order = $row['count_order'];
 
