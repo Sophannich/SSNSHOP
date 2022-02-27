@@ -7,9 +7,9 @@
 
                                             <?php                                               
 
-                                                        if ( $row['img1']>0) {
+                                            if ( $row['img1']!=null) {
                                                             echo '
-                                                            <img src=" '.$row['img1']. ' " alt="" class="img-brand">
+                                                            <img src="'.$row['img1'].'" alt="" class="img-brand">
                                                         ';
                                                         } else {
                                                             
