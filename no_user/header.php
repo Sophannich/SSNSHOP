@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SSN Electronic Shop</title>
+    <link rel="shortcut icon" type="image/png" href="https://www.iconpacks.net/icons/2/free-mobile-phone-icon-2636-thumb.png">
 
 
 <!-- Bootstrap CDM -->
