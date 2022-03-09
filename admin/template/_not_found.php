@@ -8,7 +8,7 @@
        <!-- Copyright -->
   <div class="text-center p-4">
     © 2021 Copyright :
-    <a class="text-reset fw-bold" href="https://sadi.edu.kh/"> វិទ្យាស្ថាន អភិវឌ្ឈន៍អាស៊ីសច្ចៈ</a>
+    <a class="text-reset fw-bold" href="http://ssnshop.epizy.com"> SSN Electronic Shop</a>
   </div>
   <!-- Copyright -->
     </div>

@@ -42,7 +42,8 @@
         <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
           <!-- Content -->
           <h6 class="text-uppercase fw-bold mb-4">
-            <i class="fas fa-store me-3 fo"></i> SSN Electronic Shop 
+            <i class="fas fa-store me-3 fo"></i>
+            <a class="text-reset fw-bold" href="http://ssnshop.epizy.com"> SSN Electronic Shop</a>
           </h6>
           <p  class="font-siemreap">
             មានលក់ គ្រឿង Electronic គ្រប់ប្រភេទ
@@ -113,7 +114,7 @@
   <!-- Copyright -->
   <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
     © 2021 Copyright :
-    <a class="text-reset fw-bold" href=""> SSN ELECTRONIC SHOP</a>
+    <a class="text-reset fw-bold" href="http://ssnshop.epizy.com"> SSN Electronic Shop</a>
   </div>
   <!-- Copyright -->
 </footer>

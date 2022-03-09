@@ -44,9 +44,18 @@ include("./header.php");
                     <a href="./cart.php">
                         <button class="btn_icon">
                         <i class="material-icons color-item" style="font-size: 22px;" >shopping_bag</i>
-                        <div class="menu_number" >
-                        <b>12</b>
-                        </div>
+                        <?php
+                        include('./backend/count-cart.php');
+                            if($count_cart>0){
+                              echo '<div class="menu_number" >
+                              <b>'.$count_cart.'</b>
+                              </div>';
+                            }else{
+                              echo '<div class="" >
+                              <b></b>
+                              </div>';
+                            }
+                        ?>
                         </button>
                     </a>
 

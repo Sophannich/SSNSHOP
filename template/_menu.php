@@ -136,11 +136,11 @@
                   <hr class="m-3">
 
                   <div class="menu-info">
-                    <a href="./teams.php">
+                    <a href="http://ssnshop.epizy.com">
                       <button class="btn">
-                        <i class="material-icons" style="font-size: 22px;" >help_outline</i>
+                        <i class="material-icons" style="font-size: 22px;" >language</i>
                       </button>
-                      <span class="menu-text">Help Center</span>
+                      <span class="menu-text">Website Demo</span>
                     </a>
             
                     <a href="./teams.php">
